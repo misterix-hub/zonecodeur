@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="{% static 'forum/css/style.css' %}" rel="stylesheet" />
+        <link href="{% static 'forum/icons/icofont/icofont.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'forum/uikit/css/uikit.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'forum/css/dataTables.uikit.min.css' %}" rel="stylesheet" />
+        <link href="{% static 'forum/croppie/croppie.min.css' %}" rel="stylesheet" />
+        <title>zonecodeur</title>
+        <script src="{% static 'forum/ckeditor/ckeditor.js' %}"></script>
+    </head>
+
+    <body>
+        
+        <div class="menu-bar primary">
+            <div>
+                <table width="100%">
+                    <tr>
+                        <td class="zonecodeur-cell">
+                            <div class="zonecodeur">
+                                <a href="{% url 'forum' %}">
+                                    <b><span class="left cyan-text">Zone</span><span class="right white-text">Codeur</span></b>
+                                </a>
+                            </div>
+                        </td>
+                        <td width="550"  class="sm-hide">
+                            <form class="uk-search uk-search-default uk-width-1-1" style="background-color: #0d47a1;">
+                                <span><span class="uk-search-icon-flip" style="color: #aecef3;" uk-search-icon></span></span>
+                                <input style="border: 1px solid #0d47a1;" class="uk-search-input" type="search" placeholder="Rechercher...">
+                            </form>
+                        </td>
+                        <td class="uk-text-right">
+
+                            <span>
+                                <a href="{% url 'connexion' %}" class="white-text">
+                                    <b><span uk-icon="icon: users; ratio: 0.8;"></span></b>
+                                    comptes
+                                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </span>
+
+                            <a href="#" class="white-text" uk-toggle="target: #offcanvas-nav">
+                                <span uk-icon="icon: grid; ratio: 1.3"></span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <div id="offcanvas-nav" uk-offcanvas="overlay: true; mode: push">
+
+                    <div class="uk-offcanvas-bar">
+
+                        <ul class="uk-nav uk-nav-default font-size-14">
+                            <li class="uk-active"><a href="{% url 'forum' %}">Home</a></li>
+                            <li class="uk-parent">
+                                <a href="{% url 'forum' %}">Forum</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="{% url 'forum' %}">Question</a></li>
+                                    <li><a href="{% url 'publications' %}">Publications et annonces</a></li>
+                                    <li><a href="{% url 'documentations' %}">Documentation</a></li>
+                                    <li><a href="{% url 'cours' %}">Cours et tutoriels</a></li>
+                                    <li><a href="{% url 'membres' %}">Membres</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-nav-header">Comptes</li>
+                            <li><a href="{% url 'connexion' %}"><span class="uk-margin-small-right" uk-icon="icon: sign-in"></span> Connexion</a></li>
+                            <li><a href="{% url 'inscription' %}"><span class="uk-margin-small-right" uk-icon="icon: file-edit"></span> Inscription</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="{% url 'aPropos' %}"><span class="uk-margin-small-right" uk-icon="icon:  info"></span> A propos</a></li>
+                            <li><a href="{% url 'contacts' %}"><span class="uk-margin-small-right" uk-icon="icon: receiver"></span> Contacts</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="sub-menu xs-hide" style="padding: 10px 15px;">
+            <a href="{% url 'forum' %}" class="uk-badge">
+                Questions
+            </a>
+            <a href="{% url 'publications' %}" class="uk-badge light-green">
+                Publicaion et annonces
+            </a>
+            <a href="{% url 'documentations' %}" class="uk-badge amber">
+                Documentation
+            </a>
+            <a href="{% url 'cours' %}" class="uk-badge accent-blue">
+                Cours et tutoriels
+            </a>
+            <a href="{% url 'membres' %}" class="uk-badge red-orange">
+                Membres
+            </a>
+
+            <a href="{% url 'connexion' %}" class="uk-float-right">
+                <span uk-icon="icon: sign-in"></span><span class="uk-badge">Connexion</span>
+            </a>
+        </div>
+        <div class="sub-menu" id="xs-show">
+            <table width="100%">
+                <tr>
+                    <td width="16.666%" class="uk-text-center">
+                        <a href="{% url 'forum' %}">
+                            <div class="white-text primary">
+                                <span uk-icon="icon: question; ratio: 0.7"></span>
+                            </div>
+                        </a>
+                    </td>
+                    <td  width="16.666%" class="uk-text-center">
+                        <a href="{% url 'publications' %}">
+                            <div class="white-text light-green">
+                                <span uk-icon="icon: world; ratio: 0.7"></span>
+                            </div>
+                        </a>
+                    </td>
+                    <td  width="16.666%" class="uk-text-center">
+                        <a href="{% url 'documentations' %}">
+                            <div class="white-text amber">
+                                <span uk-icon="icon: file-pdf; ratio: 0.7"></span>
+                            </div>
+                        </a>
+                    </td>
+                    <td  width="16.666%" class="uk-text-center">
+                        <a href="{% url 'cours' %}">
+                            <div class="white-text accent-blue">
+                                <span uk-icon="icon: code; ratio: 0.7"></span>
+                            </div>
+                        </a>
+                    </td>
+                    <td  width="16.666%" class="uk-text-center">
+                        <a href="{% url 'membres' %}">
+                            <div class="white-text red-orange">
+                                <span uk-icon="icon: users; ratio: 0.7"></span>
+                            </div>
+                        </a>
+                    </td>
+                    <td  width="16.666%" class="uk-text-center">
+                        <a href="{% url 'connexion' %}">
+                            <div class="white-text primary">
+                                <span uk-icon="icon: sign-in; ratio: 0.7"></span>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <form class="uk-search uk-search-default uk-width-1-1" id="xs-show">
+            <span><span class="uk-search-icon-flip" uk-search-icon></span></span>
+            <input id="sm-input" class="uk-search-input" type="search" placeholder="Rechercher...">
+        </form>
+
+        {% block content %}{% endblock %}
+
+        <div class="uk-section uk-section-secondary uk-light">
+            <div class="uk-container">
+
+                <div class="uk-grid-match uk-child-width-1-4@m" uk-grid>
+                    <div>
+                        <p class="font-size-14 uk-text-justify">
+                            <b>QUI SOMMES NOUS ?</b><br />
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ipsa ex quibusdam excepturi quasi, illo illum deleniti 
+                            ecusandae perspiciatis ducimus inventore hic nemo et
+                            <a href="{% url 'aPropos' %}">Lire plus</a>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="font-size-14">
+                            <b>COMPTES ET UTILISATION</b><br />
+                            <a href="{% url 'connexion' %}">
+                                <span uk-icon="icon: settings"></span>
+                                Connexion ou inscription
+                            </a><br /><br />
+                            Nos termes et conditions<br />
+                            <a href="">
+                                <span uk-icon="icon: folder"></span>
+                                Lire les termes et conditions
+                            </a><br />
+                        </p>
+                    </div>
+                    <div>
+                        <p class="font-size-14">
+                            <span class="uk-float-right">
+                                <a href="{% url 'equipe' %}">
+                                    <span uk-icon="icon: plus"></span>
+                                </a>
+                            </span>
+                            <b>NOTRE EQUIPE</b>
+                            <table width="100%">
+                                <tr>
+                                    <td width="25%" class="uk-text-center">
+                                        <img class="uk-border-circle" src="{% static 'forum/images/téléchargement.png' %}" width="100%" alt="">
+                                        <small class="white-text">Misterix</small>
+                                    </td>
+                                    <td width="25%" class="uk-text-center">
+                                        <img class="uk-border-circle" src="{% static 'forum/images/téléchargement.png' %}" width="100%" alt="">
+                                        <small class="white-text">Misterix</small>
+                                    </td>
+                                    <td width="25%" class="uk-text-center">
+                                        <img class="uk-border-circle" src="{% static 'forum/images/téléchargement.png' %}" width="100%" alt="">
+                                        <small class="white-text">Misterix</small>
+                                    </td>
+                                    <td width="25%" class="uk-text-center">
+                                        <img class="uk-border-circle" src="{% static 'forum/images/téléchargement.png' %}" width="100%" alt="">
+                                        <small class="white-text">Misterix</small>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <p class="font-size-14 uk-text-justify">
+                            <b>LIENS UTILES</b><br /><br />
+                            <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+                            <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+                            <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="github"></a>
+                            <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="youtube"></a>
+                            <a href="" class="uk-icon-button" uk-icon="google-plus"></a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="{% static 'forum/uikit/js/uikit.min.js' %}"></script>
+        <script src="{% static 'forum/uikit/js/uikit-icons.min.js' %}"></script>
+        <script src="{% static 'forum/js/jquery.js' %}"></script>
+        <script src="{% static 'forum/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'forum/js/dataTables.uikit.min.js' %}"></script>
+        <script src="{% static 'forum/croppie/croppie.min.js' %}"></script>
+        {% block srciptJs %}{% endblock srciptJs %}
+
+        <script>
+            $(document).ready(function() {
+                $('#dataTble').DataTable();
+            });
+        </script>
+    </body>
+</html>

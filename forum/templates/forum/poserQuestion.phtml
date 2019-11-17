@@ -1,0 +1,209 @@
+{% extends 'forum/base.phtml' %}
+
+{% block content %}
+
+{% load static %}
+
+    <div class="white"><br />
+        <div class="uk-container">
+            <div class="uk-grid font-size-14">
+                <div class="uk-width-1-3@l uk-width-1-1@m uk-width-1 1@s">
+                    <h3>Poser une question</h3>
+                    Le code est écrit en :<br /><br />
+                    <div class="uk-child-width-1-1" uk-grid>
+                        <div>
+                            <div uk-grid>
+                                <div class="uk-width-auto@m">
+                                    <ul class="uk-tab-right" uk-tab="connect: #component-tab-right; animation: uk-animation-fade">
+                                        <li><a href="#" class="font-size-13">Natif</a></li>
+                                        <li><a href="#" class="font-size-13">Framework</a></li>
+                                        <li><a href="#" class="font-size-13">Autres</a></li>
+                                    </ul>
+                                </div>
+                                <div class="uk-width-expand@m">
+                                    <ul id="component-tab-right" class="uk-switcher">
+                                        <li>
+                                            <div class="uk-margin-small uk-grid-small uk-child-width-auto uk-grid font-size-13">
+                                                <table style="width: 100%;" cellpadding='2'>
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+                                                                <input class="uk-radio" type="radio" name="natif" checked>
+                                                                Php
+                                                            </label>
+                                                        </td>
+                                                        <td class="uk-text-right">
+                                                            <label>
+                                                                Javascript
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                                Java
+                                                            </label>
+                                                        </td>
+                                                        <td class="uk-text-right">
+                                                            <label>
+                                                                Python
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                                C
+                                                            </label>
+                                                        </td>
+                                                        <td class="uk-text-right">
+                                                            <label>
+                                                                C#
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                                Pascal
+                                                            </label>
+                                                        </td>
+                                                        <td class="uk-text-right">
+                                                            <label>
+                                                                CSS
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                        <td>
+                                                            <label>
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                                Autres
+                                                            </label>
+                                                        </td>
+                                                        <td class="uk-text-right">
+                                                            <label>
+                                                                Autres
+                                                                <input class="uk-radio" type="radio" name="natif">
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <table style="width: 100%;" class="font-size-13" cellpadding='2'>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            <input class="uk-radio" type="radio" name="natif" checked>
+                                                            Spring
+                                                        </label>
+                                                    </td>
+                                                    <td class="uk-text-right">
+                                                        <label>
+                                                            Vuejs
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                            Angular
+                                                        </label>
+                                                    </td>
+                                                    <td class="uk-text-right">
+                                                        <label>
+                                                            Django
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                            Reactjs
+                                                        </label>
+                                                    </td>
+                                                    <td class="uk-text-right">
+                                                        <label>
+                                                            Reactnative
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                            Pascal
+                                                        </label>
+                                                    </td>
+                                                    <td class="uk-text-right">
+                                                        <label>
+                                                            Bootstrap
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                    <td>
+                                                        <label>
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                            Nodejs
+                                                        </label>
+                                                    </td>
+                                                    <td class="uk-text-right">
+                                                        <label>
+                                                            Autres
+                                                            <input class="uk-radio" type="radio" name="natif">
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </li>
+                                        <li class="font-size-13">
+                                            Saisir la technologie ou la langage dans le champs.
+                                            <div style="margin: 10px 0;">
+                                                <input class="uk-input" type="text" placeholder="Saisir ici ...">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="uk-width-1-2@l uk-width-1-1@m uk-width-1 1@s">
+
+                    <form>
+                        <div>
+                            <label for="titre">Titre de la question *</label>
+                            <input class="uk-input" type="text" id="titre" placeholder="Saisir le titre ici ...">
+                        </div><br />
+                        <textarea name="editor1" id="editor1" rows="10" cols="80"> Saisir ici ... </textarea>
+
+                        <button type="submit" class="uk-button uk-button-primary uk-float-right uk-margin-small-top">
+                            <small>Publier</small>
+                        </button>
+
+                        <script>
+                            CKEDITOR.replace( 'editor1' );
+                        </script>
+                    </form>
+
+                </div>
+            </div>
+        </div><br /><br /><br />
+    </div>
+    
+{% endblock %}

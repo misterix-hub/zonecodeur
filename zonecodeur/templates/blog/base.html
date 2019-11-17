@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Accueil</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/home.css' %}" />
+        <!-- Custom Stylesheet -->
+        <link href="{% static 'blog/css/style.css' %}" rel="stylesheet" />
+        <link href="{% static 'blog/icons/icofont/icofont.min.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+
+        <!--*******************
+        Preloader start
+        ********************-->
+        <div id="preloader">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+                </svg>
+            </div>
+        </div>
+        <!--*******************
+            Preloader end
+        ********************-->
+
+        <!-- MENU BAR START -->
+
+        <header>
+            <div class="top-tiny-bar p-2 dark">
+                <i class="icofont-phone"></i>
+                Contacts : <a href="tel:+22891985311">+22891985311</a> | <a href="#!">+235854810</a> <br />
+            </div>
+            <div class="menu-bar p-2">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-6 col-sm-12">
+                            <span class="globe235">
+                                <a href="">
+                                    <span class="text-blue">Glo</span><span class="text-yellow">be</span><span class="text-red">235</span>
+                                </a>
+                            </span>
+                        </div>
+                        <div class="col-lg-10 col-md-6 col-sm-12">
+                            <form>
+                                <input type="search" placeholder="Rechercher" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MENU BAR START -->
+
+        {% block content %}{% endblock %}
+
+
+        <script src="{% static 'blog/plugins/common/common.min.js' %}"></script>
+        <script src="{% static 'blog/js/custom.min.js' %}"></script>
+        <script src="{% static 'blog/js/settings.js' %}"></script>
+        <script src="{% static 'blog/js/gleek.js' %}"></script>
+        <script src="{% static 'blog/js/styleSwitcher.js' %}"></script>
+
+        <!-- Chartjs -->
+        <script src="{% static 'blog/plugins/chart.js/Chart.bundle.min.js' %}"></script>
+        <!-- Circle progress -->
+        <script src="{% static 'blog/plugins/circle-progress/circle-progress.min.js' %}"></script>
+        <!-- Datamap -->
+        <script src="{% static 'blog/plugins/d3v3/index.js' %}"></script>
+        <script src="{% static 'blog/plugins/topojson/topojson.min.js' %}"></script>
+        <!-- Morrisjs -->
+        <script src="{% static 'blog/plugins/raphael/raphael.min.js' %}"></script>
+        <script src="{% static 'blog/plugins/morris/morris.min.js' %}"></script>
+        <!-- Pignose Calender -->
+        <script src="{% static 'blog/plugins/moment/moment.min.js' %}"></script>
+        <script src="{% static 'blog/plugins/pg-calendar/js/pignose.calendar.min.js' %}"></script>
+        <!-- ChartistJS -->
+        <script src="{% static 'blog/plugins/chartist/js/chartist.min.js' %}"></script>
+        <script src="{% static 'blog/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js' %}"></script>
+
+    </body>
+</html>

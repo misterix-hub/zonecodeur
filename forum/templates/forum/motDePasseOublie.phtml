@@ -1,0 +1,35 @@
+{% extends 'forum/base.phtml' %}
+
+{% block content %}
+
+{% load static %}
+    <div class="white">
+        <br />
+        <form method="post" action="{% url 'inscriptionAction' %}" class="uk-grid-small uk-width-1-4@l uk-width-1-2@m uk-width-1-1@s uk-align-center font-size-14"
+        uk-grid style="padding-right: 15px;">
+
+            {% csrf_token %}
+
+            <div class="uk-width-1-1">
+                <div class="uk-text-left uk-margin-bottom">
+                    <h4 class="uk-margin-remove">Mot de passe oublié</h4>
+                    Entrez l'adresse email que vous avez utilisé dans le champs ci-dessous.
+                </div>
+                <label for="email">Email</label>
+                <input class="uk-input" type="email" id="email" placeholder="Saisir ici ...">
+            </div>
+            
+            <div class="uk-width-1-1">
+                
+                <button type="submit" class="uk-button uk-button-primary uk-float-right">
+                    <small>Envoyer</small>
+                </button><br /><br /><br /><br />
+                
+            </div>
+
+            
+        </form>
+        <br /><br /><br /><br />
+    </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'forum/base.phtml' %}
+
+{% block content %}
+
+{% load static %}
+    <div class="white">
+        <br />
+        <form class="uk-grid-small uk-width-1-4@l uk-width-1-2@m uk-width-1-1@s uk-align-center font-size-14"
+        uk-grid style="padding-right: 15px;">
+            <div class="uk-width-1-1">
+                <div class="uk-text-left uk-margin-bottom">
+                    <h4 class="uk-margin-remove">Connexion à un compte</h4>
+                    Connectez-vous à votre compte en entrant vos paramètres de connexion dans les champs
+                </div>
+                <label for="email">Email</label>
+                <input class="uk-input" type="email" id="email" placeholder="Saisir ici ...">
+            </div>
+            <div class="uk-width-1-1">
+                <label for="password">Mot de passe</label>
+                <input class="uk-input" type="password" id="password" placeholder="Saisir ici ...">
+                
+                <button type="submit" class="uk-button uk-button-primary uk-float-right uk-margin-small-top">
+                    <small>Se connecter</small>
+                </button><br /><br />
+                <div>
+                    <a href="{% url 'motDePasseOublie' %}">
+                        Mot de passe oublié ?
+                    </a>
+                </div><br />
+                <div>
+                    Si vous n'avez pas encore de compte,<br />
+                    <a href="{% url 'inscription' %}">Inscrivez-vous ici</a>
+                </div>
+            </div>
+
+            
+        </form>
+        <br /><br /><br /><br />
+    </div>
+
+{% endblock %}

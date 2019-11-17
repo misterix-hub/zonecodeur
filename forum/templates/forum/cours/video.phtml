@@ -1,0 +1,160 @@
+{% extends 'forum/base.phtml' %}
+
+{% block content %}
+
+{% load static %}
+    <div class="white">
+        
+        <div class="uk-container font-size-14">
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <div class="margin-small-top"></div>
+                    <ul class="uk-breadcrumb">
+                        <li><a href="{% url 'forum' %}">Home</a></li>
+                        <li><a href="{% url 'cours' %}">Cours</a></li>
+                        <li><span href="">Titre cours</span></li>
+                    </ul><br />
+                </div>
+
+                <div class="uk-width-1-2@l uk-width-1-1@m uk-width-1-1@s">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JxplDTY65oY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h4 class="uk-margin-remove">Titre de la vidéo ou du tutoriel ici à ce coin</h4>
+                    Par misterix le 13 Décembre 2019<br /><br />
+
+                    <span class="red-text"><span uk-icon="icon: info; ratio: 0.8"></span></span>
+                    Ce cours est un cours complet
+                    <a href="">accédez à la chaîne</a> pour
+                    voir toutes les vidéos
+                </div>
+                <div class="uk-width-1-3@l uk-width-1-1@m uk-width-1-1@s">
+                    
+                    <div class="black-text font-size-14 white-text"
+                        style="padding: 5px; border: 2px solid #00b0ff; background-color: #00b0ff;">
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <span class="white-text"><span uk-icon="icon: code"></span></span>
+                                    <small><b>COURS ET TUTORIELS</b></small>
+                                </td>
+                                <td class="uk-text-right">
+                                    <a href="#" class="white-text">
+                                        <span uk-icon="icon: more; ratio: 0.8"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <ul uk-accordion="multiple: true" class="uk-margin-remove"
+                    style="border: 2px solid #00b0ff; padding: 25px;">
+                        <li>
+                            <a class="uk-accordion-title" href="#">Site web e-commerçe de A-Z</a>
+                            <div class="uk-accordion-content">
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            Accéder au cours (web)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Télécharger le dossiers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">Créer son blog personnel</a>
+                            <div class="uk-accordion-content">
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            Accéder au cours (web)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Télécharger le dossiers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">Application de discussion</a>
+                            <div class="uk-accordion-content">
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            Accéder au cours (web)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Télécharger le dossiers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">Créer son forum personnel</a>
+                            <div class="uk-accordion-content">
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            Accéder au cours (web)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Télécharger le dossiers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">CRUD avec laravel</a>
+                            <div class="uk-accordion-content">
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            Accéder au cours (web)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Télécharger le dossiers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">Site web association avec bootstrap</a>
+                            <div class="uk-accordion-content">
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            Accéder au cours (web)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Télécharger le dossiers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul><br /><br />
+
+                </div>
+
+            </div>
+        </div><br /><br /><br />
+        
+    </div>
+{% endblock %}

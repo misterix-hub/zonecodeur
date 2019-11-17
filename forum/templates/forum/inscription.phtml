@@ -1,0 +1,43 @@
+{% extends 'forum/base.phtml' %}
+
+{% block content %}
+
+{% load static %}
+    <div class="white">
+        <br />
+        <form method="post" action="{% url 'inscriptionAction' %}" class="uk-grid-small uk-width-1-4@l uk-width-1-2@m uk-width-1-1@s uk-align-center font-size-14"
+        uk-grid style="padding-right: 15px;">
+
+            {% csrf_token %}
+
+            <div class="uk-width-1-1">
+                <div class="uk-text-left uk-margin-bottom">
+                    <h4 class="uk-margin-remove">Création de compte</h4>
+                    Créez votre compte en entrant les données demandées dans les champs
+                </div>
+                <label for="email">Email</label>
+                <input class="uk-input" type="email" id="email" placeholder="Saisir ici ...">
+            </div>
+            <div class="uk-width-1-1">
+                <label for="pseudo">Pseudonyme</label>
+                <input class="uk-input" type="text" id="pseudo" placeholder="Saisir ici ...">
+            </div>
+            <div class="uk-width-1-1">
+                <label for="password">Mot de passe</label>
+                <input class="uk-input" type="password" id="password" placeholder="Saisir ici ...">
+                
+                <button type="submit" class="uk-button uk-button-primary uk-float-right uk-margin-small-top">
+                    <small>S'inscrire</small>
+                </button><br /><br /><br /><br />
+                <div>
+                    Si vous avez déjà un compte,<br />
+                    <a href="{% url 'connexion' %}">Connectez-vous ici</a>
+                </div>
+            </div>
+
+            
+        </form>
+        <br /><br /><br /><br />
+    </div>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'forum/base.phtml' %}
+
+{% block content %}
+
+{% load static %}
+    
+    <div class="white">
+        
+        <div class="uk-container font-size-14">
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <div class="margin-small-top"></div>
+                    <ul class="uk-breadcrumb">
+                        <li><a href="{% url 'forum' %}">Home</a></li>
+                        <li><span href="">Publications</span></li>
+                    </ul><br />
+                </div>
+
+                <div class="uk-width-1-4@l uk-width-1-1@m uk-width-1-1@s xs-hide">
+                    
+                    <div>
+                        PROPOSER UNE PUBLICATION<br />
+                        <div>
+                            Entrez le lien de la publication dans le champs
+                        </div>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="uk-margin">
+                                <div class="uk-inline">
+                                    <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: link"></a>
+                                    <input class="uk-input" type="url" placeholder="Coller le lien ici ...">
+                                </div>
+                                <button type="submit" class="uk-button uk-margin-small-top uk-button-default">
+                                    <small>Proposer</small>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="uk-alert-primary" uk-alert>
+                            <span uk-icon="icon: info; ratio: 0.8"></span>
+                            <b>Information</b>
+                            <p class="uk-text-justify">
+                                Faire une proposition de publication revient à partager aves les
+                                autres membres une publication que vous avez découvert.
+                                Toute fois, une équipe d'orateurs vérifie tout lien avant toute publication
+                            </p>
+                        </div>
+                    </div>    
+                
+                </div>
+                <div class="uk-width-1-2@l uk-width-1-1@m uk-width-1-1@s">
+                    <table class="uk-table uk-table-striped uk-table-responsive uk-table-divider font-size-14">
+                        <thead>
+                            <tr>
+                                <th colspan="3">Publications et annonces</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="200">
+                                    <img src="{% static 'forum/images/photo.jpg' %}" width="100%" alt="">
+                                </td>
+                                <td>
+                                    <h4 class="uk-margin-remove"><a href="">Lorem ipsum dolor sit amet</a></h4>
+                                    Lorem ipsum dolor sit amet,
+                                    consectetur adipisicing elit.
+                                    Minus dolores reiciendis ipsa<br /><br />
+                                    <a href="" class="uk-button uk-button-text">
+                                        <small>Lire plus</small>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="200">
+                                    <img src="{% static 'forum/images/photo.jpg' %}" width="100%" alt="">
+                                </td>
+                                <td>
+                                    <h4 class="uk-margin-remove"><a href="">Lorem ipsum dolor sit amet</a></h4>
+                                    Lorem ipsum dolor sit amet,
+                                    consectetur adipisicing elit.
+                                    Minus dolores reiciendis ipsa<br /><br />
+                                    <a href="" class="uk-button uk-button-text">
+                                        <small>Lire plus</small>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="uk-width-1-4@l uk-width-1-1@m uk-width-1-1@s xs-hide">
+                    <div>
+                        <div class="uk-card uk-card-primary uk-card-body">
+                            <h3 class="uk-card-title">Primary</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div><br />
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <h3 class="uk-card-title">Primary</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div><br />
+                </div>
+
+            </div>
+        </div><br /><br /><br />
+        
+    </div>
+
+{% endblock %}

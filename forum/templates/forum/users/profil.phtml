@@ -1,0 +1,94 @@
+{% extends 'forum/base.phtml' %}
+
+{% block content %}
+
+{% load static %}
+    <div class="white">
+        
+        <div class="uk-container font-size-14">
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <div class="margin-small-top"></div>
+                    <ul class="uk-breadcrumb">
+                        <li><a href="{% url 'forum' %}">Home</a></li>
+                        <li><a href="{% url 'membres' %}">Membre</a></li>
+                        <li><span>Profil</span></li>
+                    </ul><br />
+                </div>
+
+                <div class="uk-width-1-3@l uk-width-1-1@m uk-width-1-1@s">
+                    <table width="100%">
+                        <tr>
+                            <td width="100">
+                                <img class="uk-border-rounded" src="{% static 'forum/images/avatar1.png' %}" alt="" width="95%">
+                            </td>
+                            <td>
+                                &nbsp;
+                                <h3 class="uk-margin-remove-bottom">
+                                    <a href="">
+                                        Pseudonyme
+                                    </a>
+                                </h3>
+                                Membre depuis 24 Déc 2019<br />
+                                Pays : Togo
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="uk-alert-primary" uk-alert>
+                        <span uk-icon="icon: info; ratio: 0.8"></span>
+                        <b>Informations sur les données !</b>
+                        <p class="uk-text-justify">
+                            Les informations que vous voyez sont celles que le membre
+                            a décidé de partager et ainsi de les rendre visible
+                            conformément à notre politique de confidentialité,
+                            termes et conditions d'utilisation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-2@l uk-width-1-1@m uk-width-1-1@s">
+                    <br />
+                    <div>
+                        <div uk-grid>
+                            <div class="uk-width-auto@m uk-flex-last@m">
+                                <ul class="uk-tab-right" uk-tab="connect: #component-tab-right; animation: uk-animation-fade">
+                                    <li><a href="#" class="font-size-13">Skills</a></li>
+                                    <li><a href="#" class="font-size-13">Profession</a></li>
+                                    <li><a href="#" class="font-size-13">Bio</a></li>
+                                </ul>
+                            </div>
+                            <div class="uk-width-expand@m">
+                                <ul id="component-tab-right" class="uk-switcher">
+                                    <li>
+                                        <ul uk-tab>
+                                            <li><a href="#" class="font-size-13">Langages</a></li>
+                                            <li><a href="#" class="font-size-13">Frameworks</a></li>
+                                        </ul>
+
+                                        <ul class="uk-switcher uk-margin">
+                                            <li>
+                                                <ul class="uk-list uk-list-striped">
+                                                    <li>C</li>
+                                                    <li>Pascal</li>
+                                                    <li>C++</li>
+                                                    <li>C#</li>
+                                                    <li>Java<li>
+                                                    <li>Pyhton</li>
+                                                </ul>
+                                            </li>
+                                            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                    <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, sed do eiusmod.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    </div>
+{% endblock %}

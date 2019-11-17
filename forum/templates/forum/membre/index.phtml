@@ -1,0 +1,105 @@
+{% extends 'forum/base.phtml' %}
+
+{% block content %}
+
+{% load static %}
+    <div class="white">
+        
+        <div class="uk-container font-size-14">
+            <div class="uk-grid">
+                <div class="uk-width-1-1">
+                    <div class="margin-small-top"></div>
+                    <ul class="uk-breadcrumb">
+                        <li><a href="{% url 'forum' %}">Home</a></li>
+                        <li><span href="">Membres</span></li>
+                    </ul><br />
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-1@m uk-width-1-1@s uk-margin-small-bottom member-cover">
+                    <table width="100%">
+                        <tr>
+                            <td width="60">
+                                <img class="uk-border-rounded" src="{% static 'forum/images/téléchargement.png' %}" alt="" width="100%">
+                            </td>
+                            <td class="font-size-13" style="padding-left: 6px;">
+                                <a href="{% url 'profilMembre' %}"><b>Pseudonyme</b></a><br />
+                                Le 12 Décembre 2019<br />
+                                SQL, Laravel, Django, Pyhton
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-1@m uk-width-1-1@s uk-margin-small-bottom member-cover">
+                    <table width="100%">
+                        <tr>
+                            <td width="60">
+                                <img class="uk-border-rounded" src="{% static 'forum/images/avatar1.png' %}" alt="" width="100%">
+                            </td>
+                            <td class="font-size-13" style="padding-left: 6px;">
+                                <a href=""><b>Pseudonyme</b></a><br />
+                                Le 12 Décembre 2019<br />
+                                SQL, Laravel, Django, Pyhton
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-1@m uk-width-1-1@s uk-margin-small-bottom member-cover">
+                    <table width="100%">
+                        <tr>
+                            <td width="60">
+                                <img class="uk-border-rounded" src="{% static 'forum/images/avatar2.jpg' %}" alt="" width="100%">
+                            </td>
+                            <td class="font-size-13" style="padding-left: 6px;">
+                                <a href=""><b>Pseudonyme</b></a><br />
+                                Le 12 Décembre 2019<br />
+                                SQL, Laravel, Django, Pyhton
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-1@m uk-width-1-1@s uk-margin-small-bottom member-cover">
+                    <table width="100%">
+                        <tr>
+                            <td width="60">
+                                <img class="uk-border-rounded" src="{% static 'forum/images/avatar1.png' %}" alt="" width="100%">
+                            </td>
+                            <td class="font-size-13" style="padding-left: 6px;">
+                                <a href=""><b>Pseudonyme</b></a><br />
+                                Le 12 Décembre 2019<br />
+                                SQL, Laravel, Django, Pyhton
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-1@m uk-width-1-1@s uk-margin-small-bottom member-cover">
+                    <table width="100%">
+                        <tr>
+                            <td width="60">
+                                <img class="uk-border-rounded" src="{% static 'forum/images/avatar2.jpg' %}" alt="" width="100%">
+                            </td>
+                            <td class="font-size-13" style="padding-left: 6px;">
+                                <a href=""><b>Pseudonyme</b></a><br />
+                                Le 12 Décembre 2019<br />
+                                SQL, Laravel, Django, Pyhton
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-1@m uk-width-1-1@s uk-margin-small-bottom member-cover">
+                    <table width="100%">
+                        <tr>
+                            <td width="60">
+                                <img class="uk-border-rounded" src="{% static 'forum/images/avatar1.png' %}" alt="" width="100%">
+                            </td>
+                            <td class="font-size-13" style="padding-left: 6px;">
+                                <a href=""><b>Pseudonyme</b></a><br />
+                                Le 12 Décembre 2019<br />
+                                SQL, Laravel, Django, Pyhton
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div><br /><br /><br />
+
+    </div>
+{% endblock %}
