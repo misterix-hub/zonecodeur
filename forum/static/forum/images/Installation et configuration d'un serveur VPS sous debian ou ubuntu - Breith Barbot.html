@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Installation et configuration d'un serveur VPS sous debian ou ubuntu - Breith Barbot</title>
+        <meta name="description" content="Comment installer et configurer un serveur VPS (OVH) sous debian ou ubuntu via SSH ?">
+        <meta name="keywords" content="">
+        <meta name="author" content="Breith Barbot">
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="https://breithbarbot.name/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://breithbarbot.name/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://breithbarbot.name/favicon-16x16.png">
+        <link rel="manifest" href="https://breithbarbot.name/site.webmanifest">
+        <link rel="mask-icon" href="https://breithbarbot.name/safari-pinned-tab.svg" color="#1a1a1a">
+        <meta name="apple-mobile-web-app-title" content="Breith Barbot">
+        <meta name="application-name" content="Breith Barbot">
+        <meta name="msapplication-TileColor" content="#1a1a1a">
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+        <meta name="msapplication-config" content="/browserconfig.xml">
+        <meta name="theme-color" content="#1a1a1a">
+
+                        <link href="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/main.css" rel="stylesheet">
+            <link href="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/print.css" rel="stylesheet" media="print">
+        
+    <link rel="stylesheet" href="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/blog.css">
+    <link rel="stylesheet" href="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/prism.css">
+
+            <meta property="article:section" content="Serveur &amp; Administration Systèmes">
+    <meta property="article:published_time" content="2014-09-21">
+            <meta property="og:image" content="https://breithbarbot.name/uploads/posts/image-35749c2ebd56783e54dbeecac812d7b8.png">
+        <meta property="article:author" content="Breith BARBOT">
+                    <meta property="og:locale" content="fr">
+            <meta property="og:title" content="Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu">
+            <meta property="og:description" content="Comment installer et configurer un serveur VPS (OVH) sous debian ou ubuntu via SSH ?">
+            <meta property="og:url" content="https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu">
+            <meta property="og:site_name" content="Breith Barbot">
+            <meta property="og:image" content="https://breithbarbot.name/build/website/images/breithbarbot.name.jpg">
+
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:site" content="@breithbarbot">
+            <meta name="twitter:title" content="Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu">
+            <meta name="twitter:description" content="Comment installer et configurer un serveur VPS (OVH) sous debian ou ubuntu via SSH ?">
+            <meta name="twitter:creator" content="@breithbarbot">
+            <meta name="twitter:image" content="https://breithbarbot.name/build/website/images/breithbarbot.name.jpg">
+            <meta property="twitter:image:src" content="https://breithbarbot.name/build/website/images/breithbarbot.name.jpg">
+            <meta property="twitter:domain" content="breithbarbot.name">
+        
+    <meta property="og:type" content="article">
+
+
+                                                    <script type="text/javascript" async="" src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/analytics.js"></script><script async="" src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/gtm.js"></script><script async="" src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/js"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'UA-59826502-1');
+                </script>
+                            
+                                            <script>
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5KD6ZXX');
+                </script>
+                                        <script src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/clipboard.min.js"></script><script src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/embed.js" data-timestamp="1574693225179"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.953a2bd009935f47a8e815c3ee2bfc5a.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.5f8b92104a5a7633e982c8a37c2b8c8e.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.8fbc0da8feaf56b2ed5ec440d881f17c.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"></head>
+
+    <body>
+        <div id="angle-quotation-mark"></div>
+        
+                        
+    <header id="header" class="text-center">
+        <div id="header-title">
+            <div id="typed-strings" style="display: none;">
+                <p><strong>Breith Barbot</strong> ^5000</p>
+                <p><em>Développeur web</em></p>
+                <p>Symfony / API</p>
+                <p>Web designer</p>
+            </div>
+            <a href="https://breithbarbot.name/blog/"><span id="typed">Symfony / API</span><span class="typed-cursor typed-cursor--blink">|</span></a>
+        </div>
+
+        <ul id="header-list-categories">
+                <li><a href="https://breithbarbot.name/blog/cat/developpement">Développement</a></li>
+    <li><a href="https://breithbarbot.name/blog/cat/divers">Divers</a></li>
+    <li><a href="https://breithbarbot.name/blog/cat/optimisation">Optimisation</a></li>
+    <li class="active"><a href="https://breithbarbot.name/blog/cat/serveur-administration-systemes">Serveur &amp; Administration Systèmes</a></li>
+    <li><a href="https://breithbarbot.name/blog/cat/webmastering">Webmastering</a></li>
+
+        </ul>
+    <canvas class="particles-js-canvas-el" width="1356" height="186" style="width: 100%; height: 100%;"></canvas></header>
+    <div id="blog">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block d-print-none">
+                    <div id="blog-tags">
+                        <h3 class="text-center">Listes des tags</h3>
+                        <hr>
+                        <div id="blog-tags-list">
+            <a href="https://breithbarbot.name/blog/tag/age-of-empire-3" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Age of Empire 3</a>
+            <a href="https://breithbarbot.name/blog/tag/aptana-studio-3" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Aptana Studio 3</a>
+            <a href="https://breithbarbot.name/blog/tag/astuces" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Astuces</a>
+            <a href="https://breithbarbot.name/blog/tag/base-de-donnees" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Base de données</a>
+            <a href="https://breithbarbot.name/blog/tag/chromium" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Chromium</a>
+            <a href="https://breithbarbot.name/blog/tag/cle-cd" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Clé CD</a>
+            <a href="https://breithbarbot.name/blog/tag/console-log" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;console.log()</a>
+            <a href="https://breithbarbot.name/blog/tag/debian" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Debian</a>
+            <a href="https://breithbarbot.name/blog/tag/driver" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Driver</a>
+            <a href="https://breithbarbot.name/blog/tag/erreur" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Erreur</a>
+            <a href="https://breithbarbot.name/blog/tag/far-cry" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Far Cry</a>
+            <a href="https://breithbarbot.name/blog/tag/fosuserbundle" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;FOSUserBundle</a>
+            <a href="https://breithbarbot.name/blog/tag/google-chrome" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Google Chrome</a>
+            <a href="https://breithbarbot.name/blog/tag/google-maps" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Google Maps</a>
+            <a href="https://breithbarbot.name/blog/tag/ide" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;IDE</a>
+            <a href="https://breithbarbot.name/blog/tag/internet" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Internet</a>
+            <a href="https://breithbarbot.name/blog/tag/javascript" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;JavaScript</a>
+            <a href="https://breithbarbot.name/blog/tag/linux" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Linux</a>
+            <a href="https://breithbarbot.name/blog/tag/maj" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;MAJ</a>
+            <a href="https://breithbarbot.name/blog/tag/mot-de-passe" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Mot de passe</a>
+            <a href="https://breithbarbot.name/blog/tag/msi" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;MSI</a>
+            <a href="https://breithbarbot.name/blog/tag/mysql" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;MySQL</a>
+            <a href="https://breithbarbot.name/blog/tag/navigateur" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Navigateur</a>
+            <a href="https://breithbarbot.name/blog/tag/nom-de-domaine" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Nom de domaine</a>
+            <a href="https://breithbarbot.name/blog/tag/numero-de-serie-invalide" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Numéro de série invalide</a>
+            <a href="https://breithbarbot.name/blog/tag/ovh" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;OVH</a>
+            <a href="https://breithbarbot.name/blog/tag/phpmyadmin" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;phpMyAdmin</a>
+            <a href="https://breithbarbot.name/blog/tag/responsive" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Responsive</a>
+            <a href="https://breithbarbot.name/blog/tag/serveur" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Serveur</a>
+            <a href="https://breithbarbot.name/blog/tag/ssh" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;SSH</a>
+            <a href="https://breithbarbot.name/blog/tag/sso" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;SSO</a>
+            <a href="https://breithbarbot.name/blog/tag/symfony" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Symfony</a>
+            <a href="https://breithbarbot.name/blog/tag/symfony-2" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Symfony 2</a>
+            <a href="https://breithbarbot.name/blog/tag/symfony-3" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Symfony 3</a>
+            <a href="https://breithbarbot.name/blog/tag/twig" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Twig</a>
+            <a href="https://breithbarbot.name/blog/tag/ubisoft" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;UbiSoft</a>
+            <a href="https://breithbarbot.name/blog/tag/vie-privee" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Vie privée</a>
+            <a href="https://breithbarbot.name/blog/tag/vps" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;VPS</a>
+            <a href="https://breithbarbot.name/blog/tag/w3c" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;W3C</a>
+            <a href="https://breithbarbot.name/blog/tag/wamp-server" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;WAMP Server</a>
+            <a href="https://breithbarbot.name/blog/tag/windows" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Windows</a>
+            <a href="https://breithbarbot.name/blog/tag/windows-8" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Windows 8</a>
+    </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 d-print-flex">
+                        <article itemscope="" itemtype="https://schema.org/Article" class="article">
+        <header>
+            <h1 itemprop="name" class="text-center">Installation et configuration d'un serveur VPS sous debian ou ubuntu</h1>
+            <link itemprop="mainEntityOfPage" href="https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu">
+            <ol itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+                <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a itemprop="item" href="https://breithbarbot.name/blog/"><span itemprop="name"><i class="fas fa-fw fa-home" aria-hidden="true"></i></span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a itemprop="item" href="https://breithbarbot.name/blog/cat/serveur-administration-systemes"><span itemprop="name">Serveur &amp; Administration Systèmes</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Installation et configuration d'un serveur VPS sous debian ou ubuntu</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+                            <div class="text-center">
+                    <img itemprop="image" style="max-width: 100%;height: auto;" src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/image-35749c2ebd56783e54dbeecac812d7b8.png" alt="installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu">
+                </div>
+                        <p class="info-article">
+                <i class="fas fa-fw fa-user" aria-hidden="true"></i> <span itemprop="author" itemscope="" itemtype="https://schema.org/Person"><span itemprop="name">Breith BARBOT</span></span> <br> <i class="fas fa-fw fa-calendar" aria-hidden="true"></i>
+                <time itemprop="datePublished" content="2014-09-21" datetime="2014-09-21">Dimanche 21 septembre 2014</time>
+                                            </p>
+        </header>
+        <div id="content">
+                            <blockquote class="text-center"><p>Bonjour à tous ! Je vais vous donner la procédure pas à pas afin d'installer et configurer correctement votre serveur VPS sous debian ou ubuntu ! Sans oublier la petite migration du nom de domaine 😉.<br>C'est un tutoriel assez basique qui vous permettra de faire tourner vos applications (web/jeux/...) sur un serveur VPS.</p></blockquote>
+                <br>
+                        <div itemprop="articleBody">
+                
+
+
+
+
+<p>Vous venez sans doute de recevoir vos identifiants et mots de passe de votre tout nouveau serveur VPS !!!! Super ! Mais vous ne savez pas vraiment comment installer/configurer votre serveur...je suis là pour vous donner quelques bonnes directives 🙂.<br><br>Petits prérequis :</p>
+<ul>
+<li>Avez-vous déjà installé Linux sur un de vos PC au moins une fois dans votre vie ?</li>
+<li>Un client SSH ?</li>
+<li>Touché&nbsp;un peu aux lignes de commandes ?</li>
+<li>Savoir ce qu'un accès SSH ?</li>
+<li>Ce qu'un accès "<strong>root</strong>" ?</li>
+<li>Connaissez un très bon <a title="Générateur de mot de passe" href="https://www.random.org/passwords/" target="_blank" rel="noopener noreferrer">générateur de mot de passe ?</a></li>
+</ul>
+<p><br>Si jusqu'ici aucune de mes questions ne vous a choqué, j'estime que nous pouvons commencer !!! 😃😜</p>
+<p>&nbsp;</p>
+<div class="alert alert-info">Estimation d'une nouvelle installation + configuration du serveur : <strong>~1h30</strong> &lt;&gt; <strong>~2h00</strong><br>Vous trouverez une liste de commandes utiles en <a href="https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu#commandes">fin de page</a>.</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Système d'exploitation / distribution&nbsp;:</h3>
+<p>Debian 7 wheezy (en version 64 bits)<br>ou<br>Ubuntu 14.XX Server (en version 64 bits)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Paramètres d'accès :</h3>
+<p>L'adresse IPv4 du VPS est : XX.XXX.XX.XXX<br>L'adresse IPv6 du VPS est : XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX<br><br>Le nom du VPS est :&nbsp;vpsXXXXX.ovh.net<br><br>Le compte administrateur configuré sur le VPS :<br>Nom d'utilisateur : root<br>Mot de passe : &nbsp; &nbsp; &nbsp;MdP_VpS</p>
+<p>Le compte administrateur configuré sur MySQL :<br>Nom d'utilisateur : root<br>Mot de passe :&nbsp; &nbsp; &nbsp; mDP_mYSQl</p>
+<p>Les utilisateurs sous MySQL&nbsp;:<br>phpMyAdmin : MDp_PmA<br>...<br>...</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Installation basique :</h3>
+<p><span style="text-decoration: underline;">Utilisateurs d'UBUNTU</span> : Nous allons précéder toutes les commandes avec "<strong>sudo</strong>" qui nous permettra d'obtenir les droits nécessaires.</p>
+<p>&nbsp;</p>
+<p>Vérifions s'il y a des mises à jour :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> update
+<span class="token function">apt-get</span> upgrade</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>On commence par installer un éditeur de texte (nano) puis modifier (si nécessaire le port SSH) :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">nano</span>
+<span class="token function">nano</span> /etc/ssh/sshd_config</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Modifier votre port comme ceci ou à votre guise (facultatif) :</p>
+<div class="code-toolbar"><pre class=" language-ini"><code class=" language-ini"># What ports, IPs and protocols we listen for
+# Port 22
+Port 12345</code></pre><div class="toolbar"><div class="toolbar-item"><span>Ini</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Puis on rafraîchit le service SSH :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>/etc/init.d/ssh reload</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>On va installer le service Apache 2 :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> apache2
+/etc/init.d/apache2 stop
+/etc/init.d/apache2 start</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Puis PHP5 et MySQL :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> php5
+<span class="token function">apt-get</span> <span class="token function">install</span> mysql-server</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Lors de l'installation MySQL, il vous invitera à rentrer un mot de passe ! Ce sera le mot de passe Administrateur MySQL.</p>
+<p>&nbsp;</p>
+<p>Installation des librairies PHP5 utiles (Cette petite liste est à compléter par vos soins):</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> php5-common libapache2-mod-php5 php5-cli php5-mysql php5-curl php5-intl php5-mcrypt
+<span class="token function">apt-get</span> <span class="token function">install</span> php5-xdebug php5-dev</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Activer le module userdir :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span>a2enmod userdir
+<span class="token function">service</span> apache2 restart
+<span class="token function">nano</span> /etc/apache2/envvars</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Puis on définit des variables système :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">export</span> APACHE_RUN_USER<span class="token operator">=</span>www-data
+<span class="token function">export</span> APACHE_RUN_GROUP<span class="token operator">=</span>www-data</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>On vérifie que les utilisateurs sont autorisés à se connecter :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">nano</span> /etc/apache2/mods-available/userdir.conf</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<div class="code-toolbar"><pre class=" language-textile"><code class=" language-textile">UserDir public_html</code></pre><div class="toolbar"><div class="toolbar-item"><span>Textile</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>L'exécution en PHP est désactivée par défaut. Pour changer ça et éviter que le navigateur ne télécharge le code PHP directement, éditer le fichier <code>/etc/apache2/mods-enabled/php5.conf</code> et commenter les lignes comme ci-dessous :</p>
+<div class="code-toolbar"><pre class=" language-apacheconf"><code class=" language-apacheconf"><span class="token directive-block tag"><span class="token directive-block tag"><span class="token punctuation">&lt;</span>IfModule</span><span class="token directive-block-parameter attr-value"> mod_userdir.c</span><span class="token punctuation">&gt;</span></span>
+    <span class="token directive-block tag"><span class="token directive-block tag"><span class="token punctuation">&lt;</span>Directory</span><span class="token directive-block-parameter attr-value"> /home/*/public_html</span><span class="token punctuation">&gt;</span></span>
+        php_admin_value engine Off
+    <span class="token directive-block tag"><span class="token directive-block tag"><span class="token punctuation">&lt;/</span>Directory</span><span class="token punctuation">&gt;</span></span>
+<span class="token directive-block tag"><span class="token directive-block tag"><span class="token punctuation">&lt;/</span>IfModule</span><span class="token punctuation">&gt;</span></span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Apache Configuration</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Puis redémarrer le service Apache 2 :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">service</span> apache2 restart</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Exemple d'un fichier Virtual Host (pour vos sous-domaines ou autres..) :</p>
+<div class="code-toolbar"><pre class=" language-apacheconf"><code class=" language-apacheconf"><span class="token directive-inline property">ServerName</span> nomserveur.com
+<span class="token directive-inline property">ServerAlias</span> www.nomserveur.com
+<span class="token directive-inline property">DocumentRoot</span> /var/www/nomserveur
+
+<span class="token directive-block tag"><span class="token directive-block tag"><span class="token punctuation">&lt;</span>Directory</span><span class="token directive-block-parameter attr-value"> /var/www/nomserveur</span><span class="token punctuation">&gt;</span></span>
+     <span class="token comment"># In Apache 2.4, Order allow,deny has</span>
+     <span class="token comment"># been replaced by Require all granted,</span>
+     <span class="token comment"># and hence you need to modify your</span>
+     <span class="token comment"># Directory permission settings.</span>
+     <span class="token directive-inline property">AllowOverride</span> All
+     <span class="token directive-inline property">Require</span> all granted
+<span class="token directive-block tag"><span class="token directive-block tag"><span class="token punctuation">&lt;/</span>Directory</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token directive-inline property">ErrorLog</span> <span class="token variable">${APACHE_LOG_DIR}</span>/nomserveur_error.log
+<span class="token directive-inline property">CustomLog</span> <span class="token variable">${APACHE_LOG_DIR}</span>/nomserveur_access.log combined</code></pre><div class="toolbar"><div class="toolbar-item"><span>Apache Configuration</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Installation d'un GBD (PHPMyAdmin) :</h3>
+<p>Installation de PHPMyAdmin :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> phpmyadmin</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Lors de l'installation précéder comme ci-dessous :</p>
+<div class="code-toolbar"><pre class=" language-textile"><code class=" language-textile">Cochez la case "apache2"
+Entrer le mot de passe Administrateur MySQL
+Entrer un  mot de passe pour l'utilisateur "phpmyadmin"</code></pre><div class="toolbar"><div class="toolbar-item"><span>Textile</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Votre phpmyadmin est maintenant accessible à l'adresse suivante : <strong>http://VOTRE_SERVEUR/phpmyadmin/</strong></p>
+<p>&nbsp;</p>
+<p>Petite astuce pour ceux qui veulent configurer phpMyAdmin via le « setup » ! <br>Par défaut, cette page est protégée par un .htpasswd. Il vous faut modifier les accès. <br>Le nom d'utilisateur (défaut) est : <strong>admin</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Installation d'un serveur FTP :</h3>
+<p>Il existe de nombreux service FTP sous linux, je vais utiliser VSFTPD :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> vsftpd</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>On commence par préparer la configuration en créant le répertoire qui contiendra tous nos fichiers :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">mkdir</span> /etc/vsftpd</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>On va devoir modifier la configuration de VSFTPD. Pour cela, on effectue une sauvegarde. Cela permettra de revenir en arrière en cas de souci :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">cp</span> /etc/vsftpd.conf /etc/vsftpd.conf.bak
+<span class="token function">cp</span> /etc/pam.d/vsftpd /etc/pam.d/vsftpd.bak</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Il nous faut maintenant installer la base de données. On utilise pour cela la commande :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> db4.8-util</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>On crée donc un fichier utilisateurs. Puis on va le convertir en base de données.</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">nano</span> /etc/vsftpd/utilisateurs</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<div class="code-toolbar"><pre class=" language-textile"><code class=" language-textile">utilisateur1
+motdepasse1
+
+utilisateur2
+motdepasse2
+</code></pre><div class="toolbar"><div class="toolbar-item"><span>Textile</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Attention : <strong>le fichier utilisateurs doit impérativement se terminer par un saut de ligne</strong> pour que <strong>db4.8_load</strong> le lise et l'interprète correctement.</p>
+<p>&nbsp;</p>
+<p>Il faut maintenant le convertir au format "db" :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>db4.8_load -T -t <span class="token function">hash</span> -f /etc/vsftpd/utilisateurs /etc/vsftpd/login.db</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>On sécurise nos fichiers :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">chmod</span> 600 /etc/vsftpd/login.*</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>On va maintenant informer le module PAM d'utiliser notre base de données nouvellement créée. Pour cela :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">nano</span> /etc/vsftpd/vsftpd.pam
+auth required /lib/x86_64-linux-gnu/security/pam_userdb.so db<span class="token operator">=</span>/etc/vsftpd/login
+account required /lib/x86_64-linux-gnu/security/pam_userdb.so db<span class="token operator">=</span>/etc/vsftpd/login
+<span class="token function">cp</span> /etc/vsftpd/vsftpd.pam /etc/pam.d/vsftpd</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Modification de vsftpd.conf :</p>
+<div class="code-toolbar"><pre class=" language-ini"><code class=" language-ini">nano /etc/vsftpd.conf
+
+<span class="token selector">[…]</span>
+<span class="token constant">anonymous_enable</span><span class="token attr-value"><span class="token punctuation">=</span>NO</span>
+<span class="token selector">[…]</span>
+<span class="token constant">chroot_local_user</span><span class="token attr-value"><span class="token punctuation">=</span>YES</span>
+<span class="token selector">[…]</span>
+<span class="token constant">secure_chroot_dir</span><span class="token attr-value"><span class="token punctuation">=</span>/var/run/vsftpd</span>
+<span class="token selector">[…]</span>
+<span class="token constant">#rsa_cert_file</span><span class="token attr-value"><span class="token punctuation">=</span>/etc/ssl/private/vsftpd.pem</span>
+<span class="token constant">rsa_cert_file</span><span class="token attr-value"><span class="token punctuation">=</span>/etc/ssl/certs/vsftpd.pem</span>
+<span class="token selector">[…]</span>
+###################################
+## Debian customization            
+## (ou adoptons la Debian attitude)
+###################################
+##
+# 'guest_enable' est très important: cela active les utilisateurs virtuels !
+# 'guest_username' fait correspondre tous les utilisateurs virtuels à
+# l'utilisateur 'virtual' que nous avons défini plus haut, et au home
+# correspondant : '~virtual/'.
+<span class="token constant">guest_enable</span><span class="token attr-value"><span class="token punctuation">=</span>YES</span>
+<span class="token constant">guest_username</span><span class="token attr-value"><span class="token punctuation">=</span>www-data</span>
+
+# On définit le nombre maximum de sessions à 200 (les nouveaux clients recevront
+# un message du genre: "erreur : serveur occupé").
+# On définit le nombre maximum de sessions par IP à 4
+<span class="token constant">max_clients</span><span class="token attr-value"><span class="token punctuation">=</span>200</span>
+<span class="token constant">max_per_ip</span><span class="token attr-value"><span class="token punctuation">=</span>4</span>
+
+# Permet d'utiliser les configurations individuelles pour chaque utilisateur
+<span class="token constant">user_config_dir</span><span class="token attr-value"><span class="token punctuation">=</span>/etc/vsftpd/vsftpd_user_conf</span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Ini</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>On va maintenant <strong>chrooter</strong> nos utilisateurs dans leur répertoire respectif. Pour cela, on crée le répertoire qui sera utilisé pour contenir nos différents fichiers par utilisateur. Et on crée le fichier pour chaque utilisateur dans notre base de données.</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">mkdir</span> /etc/vsftpd/vsftpd_user_conf/</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Puis on crée le fichier /etc/vsftpd/vsftpd_user_conf/utilisateur1 :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">nano</span> /etc/vsftpd/vsftpd_user_conf/utilisateur1</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Et on y ajoute :</p>
+<div class="code-toolbar"><pre class=" language-textile"><code class=" language-textile">anon_world_readable_only=NO
+local_root=/var/www
+write_enable=YES
+anon_upload_enable=YES
+anon_mkdir_write_enable=YES
+anon_other_write_enable=YES</code></pre><div class="toolbar"><div class="toolbar-item"><span>Textile</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>On enregistre et on ferme.</p>
+<p>On redémarre notre service FTP :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>/etc/init.d/vsftpd restart</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Pour plus de détails :</p>
+<p><a href="http://doc.ubuntu-fr.org/vsftpd" target="_blank" rel="noopener noreferrer">https://doc.ubuntu-fr.org/vsftpd</a> <br><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-vsftpd-to-use-ssl-tls-on-an-ubuntu-vps" target="_blank" rel="noopener noreferrer">https://www.digitalocean.com/community/tutorials/how-to-configure-vsftpd-to-use-ssl-tls-on-an-ubuntu-vps</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Installation de webadmin&nbsp;:</h3>
+<p>Webmin est une interface Web pour l'administration de système Unix.</p>
+<p>On va éditer le fichier /etc/apt/sources.list sur votre système et ajouter les lignes :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">nano</span> /etc/apt/sources.list
+deb <a class="token url-link" href="http://download.webmin.com/download/repository">http://download.webmin.com/download/repository</a> sarge contrib
+deb <a class="token url-link" href="http://webmin.mirror.somersettechsolutions.co.uk/repository">http://webmin.mirror.somersettechsolutions.co.uk/repository</a> sarge contrib</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Vous devez également récupérer et installer la clé GPG avec laquelle le référentiel est signé, avec les commandes :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">cd</span> /root
+<span class="token function">wget</span> <a class="token url-link" href="http://www.webmin.com/jcameron-key.asc">http://www.webmin.com/jcameron-key.asc</a>
+apt-key add jcameron-key.asc</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Vous allez maintenant être en mesure d'installer webmin avec les commandes :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> update
+<span class="token function">apt-get</span> <span class="token function">install</span> webmin</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Votre webmin est maintenant accessible à l'adresse suivante : <strong>https://VOTRE_SERVEUR:10000/</strong></p>
+<p>&nbsp;</p>
+<p>La doc : <a href="http://doc.ubuntu-fr.org/webmin/" target="_blank" rel="noopener noreferrer">https://doc.ubuntu-fr.org/webmin</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Installation de composer&nbsp;:</h3>
+<p>Composer permet d'installer des bibliothèques par ligne de commandes.<br>Exemple&nbsp;: L'installation de Symfony 2 🙂</p>
+<p>On va d'abord vérifier si «&nbsp;curl&nbsp;» est déjà installé sur votre serveur (Test inutile sous un VPS fraîchement installé)&nbsp;:</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>dpkg -l <span class="token operator">|</span> <span class="token function">grep</span> -i <span class="token function">curl</span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Si rien ne se passe, c'est que «&nbsp;curl&nbsp;» n'est pas installé&nbsp;!<br>Procédons à son installation&nbsp;:p&nbsp;:</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">curl</span>
+<span class="token function">curl</span> -sS <a class="token url-link" href="https://getcomposer.org/installer">https://getcomposer.org/installer</a> <span class="token operator">|</span> php</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Ce qui devrait vous afficher ça&nbsp;:</p>
+<div class="code-toolbar"><pre class=" language-textile"><code class=" language-textile">#!/usr/bin/env php
+All settings correct for using Composer
+Downloading...
+Composer successfully installed to: //composer.phar
+Use it: php composer.phar</code></pre><div class="toolbar"><div class="toolbar-item"><span>Textile</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Puis exécuter le déplacement du fichier :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">mv</span> composer.phar /usr/local/bin/composer</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Installation d'Xdebug (PHP) :</h3>
+<p>Installation de Xdebug :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">make</span> php-pear
+pecl <span class="token function">install</span> xdebug</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Ajouter cette ligne à la fin de /etc/php5/apache2/php.ini pour l'activer :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">nano</span> /etc/php5/apache2/php.ini
+zend_extension<span class="token operator">=</span>/usr/lib/php5/20100525/xdebug.so</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Installation d'un serveur mail :</h3>
+<p>Pour la configuration du serveur mail :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> telnet</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<ul style="list-style-type: square;">
+<li><a href="https://wiki.debian.org/Postfix/" target="_blank" rel="noopener noreferrer">https://wiki.debian.org/Postfix/</a></li>
+<li><a href="http://www.clamav.net/index.html" target="_blank" rel="noopener noreferrer">https://www.clamav.net/</a></li>
+<li><a href="https://spamassassin.apache.org/" target="_blank" rel="noopener noreferrer">https://spamassassin.apache.org/</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Liaison de votre nom de domaine avec votre VPS :</h3>
+<p>Manipulation à risque !!! [<strong style="color: red;">Utilisateur averti</strong>]<br>Pensez à faire une sauvegarde/export de vos redirections/Zone DNS...</p>
+<p>C'est super simple en plus ^^</p>
+<ol style="list-style: decimal;">
+<li>Connectez-vous sur votre espace client</li>
+<li>Récupérez/copiez l'adresse IPv4 (et l'IPv6…) de votre serveur (dédié, VPS, Cloud, etc…)</li>
+<li>Puis dirigez-vous vers le service de votre nom de domaine</li>
+<li>Accédez aux paramètres de redirection/Zone DNS</li>
+<li>2 solutions !
+<ul>
+<li><em>1°/ Chercher votre nom de domaine avec l'adresse IP de votre ancien serveur et remplacer la par celle de votre tout nouveau serveur VPS.</em></li>
+<li><em>2°/ Créer une nouvelle redirection de type A (pour les IPv4) ou/et de type AAAA (pour les IPv6)</em></li>
+</ul>
+</li>
+<li>La redirection peut avoir comme valeur votre nom de domaine mais aussi des sous-domaines… après je vous laisse faire le mariage entre apache 2 et les redirections URL, ...expreg…. À vous de voir ^^ :D</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Petite parenthèse pour les développeurs travaillant avec Symfony 2 :</h3>
+<p>Rien d'extraordinaire...</p>
+<p>On&nbsp;va&nbsp;installer (pour ceux utilisant le système de cache <strong>APC</strong>) le&nbsp;paquet&nbsp;PHP-APC :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> php-apc</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Git et Java selon vos besoins...</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> git-core
+<span class="token function">aptitude</span> <span class="token function">install</span> default-jre</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Ceux qui veulent repartir à zéro, je vous propose de vous placer dans le répertoire <code>/var/www</code> (par défaut) et créer un nouveau dossier que je nomme <code>nom_projet</code></p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">cd</span> /var/www
+<span class="token function">mkdir</span> nom_projet</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>Puis, nous allons installer notre toute nouvelle version :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>composer create-project symfony/framework-standard-edition:^2.5 nom_projet</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Rendez-vous sur la <a href="https://symfony.com/download" target="_blank" rel="noopener noreferrer">page de téléchargement</a> de Symfony pour connaitre la dernière version stable disponible si besoin...</p>
+<p>&nbsp;</p>
+<p>Puis éditez le fichier « php.ini » afin que notre application fonctionne sans problème...</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">nano</span> /etc/php5/apache2/php.ini</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Les directives PHP suivantes doivent être à <strong>off</strong> / <strong>0</strong></p>
+<div class="code-toolbar"><pre class=" language-textile"><code class=" language-textile">register_globals
+​short_open_tag​
+magic_quotes_gpc
+session.auto_start</code></pre><div class="toolbar"><div class="toolbar-item"><span>Textile</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>De plus, Symfony a&nbsp;besoin de connaître votre décalage horaire ! Appliquez&nbsp;votre valeur au fichier « php.ini » :</p>
+<div class="code-toolbar"><pre class=" language-ini"><code class=" language-ini"><span class="token constant">date.timezone</span> <span class="token attr-value"><span class="token punctuation">=</span> Europe/Paris</span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Ini</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>N'oubliez&nbsp;pas de donner&nbsp;tous&nbsp;les droits nécessaires aux dossiers <strong>app/logs</strong> et <strong>app/cache</strong> avec la commande <code>chmod 777</code> !<br>SI vous avez des erreurs liées aux droits en écriture, consultez&nbsp;<a href="http://kiwwito.com/unable-to-write-cache-file-problem-in-symfony-2/" target="_blank" rel="noopener noreferrer">cet&nbsp;article</a> lié au problème d'écriture des&nbsp;dossiers&nbsp;<em>app/cache</em> et <em>app/logs</em>.</p>
+<p>Et pour finir, vérifiez&nbsp;si tout va&nbsp;bien avec cette commande :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>php app/check.php</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Quelques liens utiles lors d'une mise en prod :</p>
+<p><a href="https://symfony.com/doc/2.8/cookbook/deployment/tools.html" target="_blank" rel="noopener noreferrer">Déployer une application Symfony2</a><br><a href="https://symfony.com/doc/2.8/reference/requirements.html" target="_blank" rel="noopener noreferrer">Pré-requis au bon fonctionnement de Symfony2</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Installation de PHP-ZIP :</h3>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">zip</span> <span class="token function">bzip2</span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p id="commandes">&nbsp;</p>
+<p>&nbsp;</p>
+<h2 align="center">Les commandes utiles</h2>
+<p>Et oui ! Parce qu'on&nbsp;n'est pas des machines à mémoire nous ^^<br>On&nbsp;ne retient pas tout du premier coup !</p>
+<p>&nbsp;</p>
+<h4>Pour Symfony :</h4>
+<p>Vider les répertoires de logs et cache (1er méthode brutal &amp; 2ème méthode douce) :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">rm</span> -rf app/logs/*
+<span class="token function">rm</span> -rf app/cache/*
+php app/console cache:clear</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Pour exporter les ressources en environnement de <strong>prod</strong> :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>php app/console assetic:dump --env<span class="token operator">=</span>prod --no-debug</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<h4>Pour Linux :</h4>
+<p>Mettre à jour toutes les dépendances :</p>
+<div class="code-toolbar"><pre class=" language-markup"><code class=" language-markup">apt-get update
+apt-get upgrade</code></pre><div class="toolbar"><div class="toolbar-item"><span>Markup</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Résoudre les problèmes de dépendances</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> –f</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Cette commande permettra d'éliminer l'emballage du paquet&nbsp;et les autres packages dépendants qui ne sont plus nécessaires&nbsp;:</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> remove --auto-remove <span class="token operator">&lt;</span>package<span class="token operator">&gt;</span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Supprimer vos fichiers locaux / config&nbsp;:</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> purge --auto-remove <span class="token operator">&lt;</span>package<span class="token operator">&gt;</span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Supprimer simplement un paquet&nbsp;:</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> remove --purge <span class="token operator">&lt;</span>package<span class="token operator">&gt;</span>
+<span class="token function">apt-get</span> autoremove
+<span class="token function">apt-get</span> autoclean</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<div>&nbsp;</div>
+<p>Supprimer un dossier ainsi que ses dépendances (sous-dossier) [-rf]&nbsp;:</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">rm</span> -rf <span class="token operator">&lt;</span>directory<span class="token operator">&gt;</span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<div>&nbsp;</div>
+<p>Déplacer un fichier et le renommer :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">mv</span> fichier.txt /var/www/nom_projet/fichier.pdf</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Résoudre les problèmes de dépendances</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span><span class="token function">apt-get</span> <span class="token function">install</span> –f</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Configurer/Re-configurer un paquet déjà installé :</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>dpkg-reconfigure <span class="token operator">&lt;</span>package<span class="token operator">&gt;</span></code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>Pour mettre à jour ses dépendances (Il faut être dans le dossier parent de votre application muni du fichier composer.json)&nbsp;:</p>
+<div class="code-toolbar"><pre class="command-line  language-bash" data-user="root" data-host="vpsXXXXX"><code class=" language-bash"><span class="command-line-prompt"><span data-user="root" data-host="vpsXXXXX"></span></span>composer update</code></pre><div class="toolbar"><div class="toolbar-item"><span>Bash</span></div><div class="toolbar-item"><a>Copier</a></div></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Bon… Il se fait tard ! Non ? Bande de G33K ^^ Que la force soit avec vous alors !<br>En espérant que ce tutoriel puisse répondre à vos questionnements et vous donner une meilleure approche concernant l'installation de service sur un serveur, je vous laisse peaufiner, bidouiller, COMPRENDRE et surtout vous éclater dans vos paramétrages 😊</p>
+
+
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <p class="text-center" id="likeEndShare">❤️ Si j’ai pu aider certain(e)s d’entre vous, merci de bien vouloir partager cet article. ❤️</p>
+            <div class="share-article text-center">
+                <button type="button" id="fbShare" class="btn btn-default">Facebook</button>
+                <button type="button" id="twShare" class="btn btn-default">Twitter</button>
+                <button type="button" id="lkShare" class="btn btn-default">LinkedIn</button>
+                <button type="button" id="vdShare" class="btn btn-default">Viadeo</button>
+                <button type="button" id="tbShare" class="btn btn-default">Tumblr.</button>
+            </div>
+            <hr>
+            <div id="prev-next" class="text-center">
+                                    <a rel="prev" href="https://breithbarbot.name/blog/comment-proteger-sa-vie-privee-en-naviguant-sur-internet">
+                        <p><i class="fas fa-fw fa-arrow-left" aria-hidden="true"></i> Article précédent</p>
+                        <p>Comment protéger sa vie privée en naviguant sur internet ?</p>
+                    </a>
+                                                    <a rel="next" href="https://breithbarbot.name/blog/far-cry-numero-de-serie-invalide">
+                        <p>Article suivant <i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i></p>
+                        <p>Far Cry : N° de série invalide</p>
+                    </a>
+                            </div>
+                            <hr>
+                <h4 title="Mots clés">Tags : </h4>
+                <p id="tags">
+                                            <a href="https://breithbarbot.name/blog/tag/debian" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Debian</a>
+                                            <a href="https://breithbarbot.name/blog/tag/linux" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Linux</a>
+                                            <a href="https://breithbarbot.name/blog/tag/mysql" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;MySQL</a>
+                                            <a href="https://breithbarbot.name/blog/tag/nom-de-domaine" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Nom de domaine</a>
+                                            <a href="https://breithbarbot.name/blog/tag/ovh" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;OVH</a>
+                                            <a href="https://breithbarbot.name/blog/tag/phpmyadmin" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;phpMyAdmin</a>
+                                            <a href="https://breithbarbot.name/blog/tag/serveur" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Serveur</a>
+                                            <a href="https://breithbarbot.name/blog/tag/ssh" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;SSH</a>
+                                            <a href="https://breithbarbot.name/blog/tag/symfony" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Symfony</a>
+                                            <a href="https://breithbarbot.name/blog/tag/symfony-2" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Symfony 2</a>
+                                            <a href="https://breithbarbot.name/blog/tag/vps" class="btn btn-default btn-sm"> <i class="fas fa-fw fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;VPS</a>
+                                    </p>
+                    </footer>
+                    <hr>
+            <div id="disqus_thread"><iframe id="dsq-app4734" name="dsq-app4734" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 1739px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+            <noscript>
+                <div class="alert alert-danger">
+                    <span class="glyphicon glyphicon-warning-sign"></span> Veuillez activer votre Javascript pour l'affichage des <b>commentaires</b>... Merci <br> Pour l'activer, voici un exemple <a class="alert-link" target="_blank" href="https://support.google.com/adsense/answer/12654">ici</a>
+                </div>
+            </noscript>
+            </article>
+                </div>
+                <div class="col-md-3 d-none d-md-block d-print-none">
+                    <div id="blog-categories">
+                        <h3 class="text-center">Listes des catégories</h3>
+                        <hr>
+                        <div id="blog-categories-list" class="accordion">
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">
+                    <button class="collapsed" data-toggle="collapse" data-target="#cat-developpement" data-parent="#list-categories" role="button" aria-expanded="false" aria-controls="cat-developpement">
+                        <span class="fas fa-fw fa-chevron-right"></span>
+                        Développement
+                    </button>
+                    <a href="https://breithbarbot.name/blog/cat/developpement" title="" data-toggle="tooltip" class="float-right" data-original-title="Accédez directement à développement">
+                        <i class="far fa-fw fa-arrow-alt-circle-right" aria-hidden="true"></i>
+                    </a>
+                </h5>
+            </div>
+            <div id="cat-developpement" class="card-collapse collapse ">
+                <div class="card-body">
+                    <ul>
+                                                    <li><a href="https://breithbarbot.name/blog/le-probleme-du-pourcentage-dans-un-fichier-de-configuration-symfony" title="Le problème du &#39;%&#39; dans un fichier de configuration Symfony"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Le problème du '%' dans un fichier de configuration Symfony</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/sso-fosuserbundle-sous-symfony" title="SSO + FOSUserBundle sous Symfony"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> SSO + FOSUserBundle sous Symfony</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/utilisation-des-filtres-twig-slice-et-truncate-avec-symfony" title="Utilisation des filtres Twig (slice et truncate) avec Symfony"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Utilisation des filtres Twig (slice et truncate) avec Symfony</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/optimisation-de-google-chrome-avec-les-fonctionnalites-avancees" title="Optimisation de Google chrome avec les fonctionnalités avancées"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Optimisation de Google chrome avec les fonctionnalités avancées</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/google-maps-responsive-et-valide-au-w3c" title="Google Maps responsive et valide au W3C !"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Google Maps responsive et valide au W3C !</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">
+                    <button class="collapsed" data-toggle="collapse" data-target="#cat-divers" data-parent="#list-categories" role="button" aria-expanded="false" aria-controls="cat-divers">
+                        <span class="fas fa-fw fa-chevron-right"></span>
+                        Divers
+                    </button>
+                    <a href="https://breithbarbot.name/blog/cat/divers" title="" data-toggle="tooltip" class="float-right" data-original-title="Accédez directement à divers">
+                        <i class="far fa-fw fa-arrow-alt-circle-right" aria-hidden="true"></i>
+                    </a>
+                </h5>
+            </div>
+            <div id="cat-divers" class="card-collapse collapse ">
+                <div class="card-body">
+                    <ul>
+                                                    <li><a href="https://breithbarbot.name/blog/age-of-empires-3-echec-de-linitialisation" title="Age of Empires 3 - Échec de l&#39;initialisation"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Age of Empires 3 - Échec de l'initialisation</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/far-cry-numero-de-serie-invalide" title="Far Cry : N° de série invalide"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Far Cry : N° de série invalide</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/comment-proteger-sa-vie-privee-en-naviguant-sur-internet" title="Comment protéger sa vie privée en naviguant sur internet ?"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Comment protéger sa vie privée en naviguant sur internet ?</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/mise-a-jour-des-drivers-du-pc-portable-msi-gt783-sous-windows-8-8-1" title="Mise à jour des drivers du PC Portable MSI GT783 sous Windows 8 / 8.1"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Mise à jour des drivers du PC Portable MSI GT783 sous Windows 8 / 8.1</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/passage-sous-windows-8" title="Passage sous Windows 8 !"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Passage sous Windows 8 !</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">
+                    <button class="collapsed" data-toggle="collapse" data-target="#cat-optimisation" data-parent="#list-categories" role="button" aria-expanded="false" aria-controls="cat-optimisation">
+                        <span class="fas fa-fw fa-chevron-right"></span>
+                        Optimisation
+                    </button>
+                    <a href="https://breithbarbot.name/blog/cat/optimisation" title="" data-toggle="tooltip" class="float-right" data-original-title="Accédez directement à optimisation">
+                        <i class="far fa-fw fa-arrow-alt-circle-right" aria-hidden="true"></i>
+                    </a>
+                </h5>
+            </div>
+            <div id="cat-optimisation" class="card-collapse collapse ">
+                <div class="card-body">
+                    <ul>
+                                                    <li><a href="https://breithbarbot.name/blog/astuces-et-plugins-pour-aptana-studio-3" title="Astuces et plugins pour Aptana Studio 3"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Astuces et plugins pour Aptana Studio 3</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">
+                    <button class="" data-toggle="collapse" data-target="#cat-serveur-administration-systemes" data-parent="#list-categories" role="button" aria-expanded="true" aria-controls="cat-serveur-administration-systemes">
+                        <span class="fas fa-fw fa-chevron-right"></span>
+                        Serveur &amp; Administration Systèmes
+                    </button>
+                    <a href="https://breithbarbot.name/blog/cat/serveur-administration-systemes" title="" data-toggle="tooltip" class="float-right" data-original-title="Accédez directement à serveur &amp; administration systèmes">
+                        <i class="far fa-fw fa-arrow-alt-circle-right" aria-hidden="true"></i>
+                    </a>
+                </h5>
+            </div>
+            <div id="cat-serveur-administration-systemes" class="card-collapse collapse show">
+                <div class="card-body">
+                    <ul>
+                                                    <li class="active"><a href="https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu" title="Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Installation et configuration d'un serveur VPS sous debian ou ubuntu</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">
+                    <button class="collapsed" data-toggle="collapse" data-target="#cat-webmastering" data-parent="#list-categories" role="button" aria-expanded="false" aria-controls="cat-webmastering">
+                        <span class="fas fa-fw fa-chevron-right"></span>
+                        Webmastering
+                    </button>
+                    <a href="https://breithbarbot.name/blog/cat/webmastering" title="" data-toggle="tooltip" class="float-right" data-original-title="Accédez directement à webmastering">
+                        <i class="far fa-fw fa-arrow-alt-circle-right" aria-hidden="true"></i>
+                    </a>
+                </h5>
+            </div>
+            <div id="cat-webmastering" class="card-collapse collapse ">
+                <div class="card-body">
+                    <ul>
+                                                    <li><a href="https://breithbarbot.name/blog/les-differentes-variantes-de-la-fonction-console-en-javascript" title="Les différentes variantes de la fonction &lt;console&gt; en JavaScript"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Les différentes variantes de la fonction &lt;console&gt; en JavaScript</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/ajouter-un-mot-de-passe-avec-phpmyadmin-sous-wamp-server" title="Ajouter un mot de passe avec phpMyAdmin sous WAMP Server"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Ajouter un mot de passe avec phpMyAdmin sous WAMP Server</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/configuration-personnalisee-pour-phpmyadmin" title="Configuration personnalisée pour phpMyAdmin !"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Configuration personnalisée pour phpMyAdmin !</a></li>
+                                                    <li><a href="https://breithbarbot.name/blog/mettre-a-jour-phpmyadmin-sous-wamp-server" title="Mettre à jour phpMyAdmin sous WAMP Server"><i class="fas fa-fw fa-arrow-right" aria-hidden="true"></i> Mettre à jour phpMyAdmin sous WAMP Server</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+                    </div>
+                    <br>
+                    <div id="blog-follow-me">
+                        <h3 class="text-center">Suivez moi !</h3>
+                        <hr>
+                        <div>
+                            <a href="https://twitter.com/breithbarbot" data-toggle="tooltip" title="" target="_blank" data-original-title="Twitter"><i class="fab fa-fw fa-twitter"></i></a>
+                            <a href="https://fr.viadeo.com/fr/profile/breith.barbot" data-toggle="tooltip" title="" target="_blank" data-original-title="Viadeo"><i class="fab fa-fw fa-viadeo"></i></a>
+                            <a href="https://fr.linkedin.com/in/breithbarbot" data-toggle="tooltip" title="" target="_blank" data-original-title="LinkedIn"><i class="fab fa-fw fa-linkedin"></i></a>
+                            <a href="https://breithbarbot.name/blog/feed/atom" data-toggle="tooltip" title="" target="_blank" data-original-title="Flux RSS/ATOM"><i class="fas fa-fw fa-rss"></i></a>
+                            <a href="https://github.com/breithbarbot" data-toggle="tooltip" title="" target="_blank" data-original-title="GitHub"><i class="fab fa-fw fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer id="footer" class="text-center">
+    <p><span data-toggle="tooltip" data-placement="top" title="" data-original-title="Toute copie totale ou partielle du contenu, code source,... de ce site est strictement interdite !"><span data-toggle="modal" data-target="#legal-information">Politique de confidentialité</span></span>. 2012 - 2019 © Breith Barbot</p>
+    <p>Page générée en 0.46 secondes</p>
+    <p>Developed with <span id="footer-heart" class="fas fa-heart"></span></p>
+</footer>
+
+<div id="go-to-top" title="" data-toggle="tooltip" data-placement="top" style="" data-original-title="Retour vers le haut"></div>
+
+                    <div class="modal fade" id="legal-information" tabindex="-1" role="dialog" aria-labelledby="legal-information-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="legal-information-label"><i class="fas fa-gavel"></i> Politique de confidentialité</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="font-size: 75%">
+                    <p class="text-center h2">Mentions légales (RGPD)</p>
+
+                    <br>
+
+                    <div class="alert alert-primary">
+                        <p class="h3">Définitions</p>
+                        <p><b>Client :</b> tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.</p>
+                        <p><b>Prestations et Services :</b> <a href="https://breithbarbot.name/">https://breithbarbot.name</a> met à disposition des Clients :</p>
+                        <p><b>Contenu :</b> Ensemble des éléments constituants l'information présente sur le Site, notamment textes – images – vidéos.</p>
+                        <p><b>Informations clients :</b> Ci après dénommé « Information (s) » qui correspondent à l'ensemble des données personnelles susceptibles d'être détenues par <a href="https://breithbarbot.name/">https://breithbarbot.name</a> pour la gestion de votre compte, de la gestion de la relation client et à des fins d'analyses et de statistiques.</p>
+                        <p><b>Utilisateur :</b> Internaute se connectant, utilisant le site susnommé.</p>
+                        <p><b>Informations personnelles :</b> « Les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
+                        <p>Les termes « données à caractère personnel », « personne concernée », « sous traitant » et « données sensibles » ont le sens défini par le Règlement Général sur la Protection des Données (RGPD : n° 2016-679)</p>
+                    </div>
+
+                    <br><hr><br>
+
+                    <p class="h3">1. Présentation du site internet.</p>
+                    <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet <a href="https://breithbarbot.name/">https://breithbarbot.name</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi: </p>
+                    <ul style="list-style: square;">
+                        <li><b>Propriétaire</b> : Breith Barbot – 31000 Toulouse</li>
+                        <li><b>Responsable publication</b> : Breith Barbot – 06 95 58 02 67</li>
+                        <li>Le responsable publication est une personne physique ou une personne morale.</li>
+                        <li><b>Webmaster</b> : Breith Barbot – 06 95 58 02 67</li>
+                        <li><b>Hébergeur</b> : <a href="https://www.ovh.com/">OVH SAS</a> – 2 rue Kellermann - 59100 Roubaix - France</li>
+                        <li><b>Délégué à la protection des données</b> : Breith Barbot – b.breith@gmail.com</li>
+                    </ul>
+                    <div><p>Une partie de ces mentions légales a été générée par : <a href="https://fr.orson.io/">Orson.io</a></p></div>
+
+                    <br><hr><br>
+
+                    <p class="h3">2. Conditions générales d'utilisation du site et des services proposés.</p>
+                    <p>Le Site constitue une œuvre de l'esprit protégée par les dispositions du Code de la Propriété Intellectuelle et des Réglementations Internationales applicables.Le Client ne peut en aucune manière réutiliser, céder ou exploiter pour son propre compte tout ou partie des éléments ou travaux du Site.</p>
+                    <p>L'utilisation du site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites. Ces conditions d'utilisation sont susceptibles d'être modifiées ou complétées à tout moment, les utilisateurs du site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> sont donc invités à les consulter de manière régulière.</p>
+                    <p>Ce site internet est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par <a href="https://breithbarbot.name/">https://breithbarbot.name</a>, qui s'efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l'intervention.Le site web <a href="https://breithbarbot.name/">https://breithbarbot.name</a> est mis à jour régulièrement par <a href="https://breithbarbot.name/">https://breithbarbot.name</a> responsable. De la même façon, les mentions légales peuvent être modifiées à tout moment : elles s'imposent néanmoins à l'utilisateur qui est invité à s'y référer le plus souvent possible afin d'en prendre connaissance.</p>
+
+                    <br><hr><br>
+
+                    <p class="h3">3. Description des services fournis.</p>
+                    <p>Le site internet <a href="https://breithbarbot.name/">https://breithbarbot.name</a> a pour objet de fournir une information concernant l'ensemble des activités de la société.<a href="https://breithbarbot.name/">https://breithbarbot.name</a> s'efforce de fournir sur le site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des oublis, des inexactitudes et des carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
+                    <p>Toutes les informations indiquées sur le site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> sont données à titre indicatif, et sont susceptibles d'évoluer. Par ailleurs, les renseignements figurant sur le site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.</p>
+
+                    <br><hr><br>
+
+                    <p class="h3">4. Limitations contractuelles sur les données techniques.</p>
+                    <p>Le site utilise la technologie JavaScript. Le site Internet ne pourra être tenu responsable de dommages matériels liés à l'utilisation du site. De plus, l'utilisateur du site s'engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis-à-jour Le site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> est hébergé chez un prestataire sur le territoire de l'Union Européenne conformément aux dispositions du Règlement Général sur la Protection des Données (RGPD : n° 2016-679)</p>
+                    <p>L'objectif est d'apporter une prestation qui assure le meilleur taux d'accessibilité. L'hébergeur assure la continuité de son service 24 Heures sur 24, tous les jours de l'année. Il se réserve néanmoins la possibilité d'interrompre le service d'hébergement pour les durées les plus courtes possibles notamment à des fins de maintenance, d'amélioration de ses infrastructures, de défaillance de ses infrastructures ou si les Prestations et Services génèrent un trafic réputé anormal.</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> et l'hébergeur ne pourront être tenus responsables en cas de dysfonctionnement du réseau Internet, des lignes téléphoniques ou du matériel informatique et de téléphonie lié notamment à l'encombrement du réseau empêchant l'accès au serveur.</p>
+
+                    <br><hr><br>
+
+                    <p class="h3">5. Propriété intellectuelle et contrefaçons.</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> est propriétaire des droits de propriété intellectuelle et détient les droits d'usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, icônes et sons. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de : <a href="https://breithbarbot.name/">https://breithbarbot.name</a>.</p>
+                    <p>Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+
+                    <br><hr><br>
+
+                    <p class="h3">6. Limitations de responsabilité.</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> agit en tant qu'éditeur du site. <a href="https://breithbarbot.name/">https://breithbarbot.name</a> est responsable de la qualité et de la véracité du Contenu qu'il publie. </p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l'utilisateur, lors de l'accès au site internet <a href="https://breithbarbot.name/">https://breithbarbot.name</a>, et résultant soit de l'utilisation d'un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l'apparition d'un bug ou d'une incompatibilité.</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> ne pourra également être tenu responsable des dommages indirects (tels par exemple qu'une perte de marché ou perte d'une chance) consécutifs à l'utilisation du site <a href="https://breithbarbot.name/">https://breithbarbot.name</a>. Des espaces interactifs (possibilité de poser des questions dans l'espace contact) sont à la disposition des utilisateurs. <a href="https://breithbarbot.name/">https://breithbarbot.name</a> se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données. Le cas échéant, <a href="https://breithbarbot.name/">https://breithbarbot.name</a> se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l'utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie ...).</p>
+
+                    <br><hr><br>
+
+                    <p class="h3">7. Gestion des données personnelles.</p>
+                    <p>Le Client est informé des réglementations concernant la communication marketing, la loi du 21 Juin 2014 pour la confiance dans l'Economie Numérique, la Loi Informatique et Liberté du 06 Août 2004 ainsi que du Règlement Général sur la Protection des Données (RGPD : n° 2016-679). </p>
+
+                    <br>
+
+                    <p class="h5">7.1 Responsables de la collecte des données personnelles</p>
+                    <p>Pour les Données Personnelles collectées dans le cadre de la création du compte personnel de l'Utilisateur et de sa navigation sur le Site, le responsable du traitement des Données Personnelles est : Breith Barbot. <a href="https://breithbarbot.name/">https://breithbarbot.name</a>est représenté par Breith Barbot, son représentant légal</p>
+                    <p>En tant que responsable du traitement des données qu'il collecte, <a href="https://breithbarbot.name/">https://breithbarbot.name</a> s'engage à respecter le cadre des dispositions légales en vigueur. Il lui appartient notamment au Client d'établir les finalités de ses traitements de données, de fournir à ses prospects et clients, à partir de la collecte de leurs consentements, une information complète sur le traitement de leurs données personnelles et de maintenir un registre des traitements conforme à la réalité. Chaque fois que <a href="https://breithbarbot.name/">https://breithbarbot.name</a> traite des Données Personnelles, <a href="https://breithbarbot.name/">https://breithbarbot.name</a> prend toutes les mesures raisonnables pour s'assurer de l'exactitude et de la pertinence des Données Personnelles au regard des finalités pour lesquelles <a href="https://breithbarbot.name/">https://breithbarbot.name</a> les traite.</p>
+
+                    <br>
+
+                    <p class="h5">7.2 Finalité des données collectées</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> est susceptible de traiter tout ou partie des données : </p>
+                    <ul>
+                                                <li>pour prévenir et lutter contre la fraude informatique (spamming, hacking...) : matériel informatique utilisé pour la navigation, l'adresse IP, le mot de passe (hashé)</li>
+                        <li>pour améliorer la navigation sur le Site : données de connexion et d'utilisation</li>
+                                                                    </ul>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> ne commercialise pas vos données personnelles qui sont donc uniquement utilisées par nécessité ou à des fins statistiques et d'analyses.</p>
+
+                    <br>
+
+                    <p class="h5">7.3 Droit d'accès, de rectification et d'opposition</p>
+                    <p>Conformément à la réglementation européenne en vigueur, les Utilisateurs de <a href="https://breithbarbot.name/">https://breithbarbot.name</a> disposent des droits suivants : </p>
+                    <ul style="list-style: square;">
+                        <li>droit d'accès (article 15 RGPD) et de rectification (article 16 RGPD), de mise à jour, de complétude des données des Utilisateurs droit de verrouillage ou d'effacement des données des Utilisateurs à caractère personnel (article 17 du RGPD), lorsqu'elles sont inexactes, incomplètes, équivoques, périmées, ou dont la collecte, l'utilisation, la communication ou la conservation est interdite</li>
+                        <li>droit de retirer à tout moment un consentement (article 13-2c RGPD)</li>
+                        <li>droit à la limitation du traitement des données des Utilisateurs (article 18 RGPD)</li>
+                        <li>droit d'opposition au traitement des données des Utilisateurs (article 21 RGPD)</li>
+                        <li>droit à la portabilité des données que les Utilisateurs auront fournies, lorsque ces données font l'objet de traitements automatisés fondés sur leur consentement ou sur un contrat (article 20 RGPD)</li>
+                        <li>droit de définir le sort des données des Utilisateurs après leur mort et de choisir à qui <a href="https://breithbarbot.name/">https://breithbarbot.name</a> devra communiquer (ou non) ses données à un tiers qu'ils aura préalablement désigné</li>
+                    </ul>
+                    <p>Dès que <a href="https://breithbarbot.name/">https://breithbarbot.name</a> a connaissance du décès d'un Utilisateur et à défaut d'instructions de sa part, <a href="https://breithbarbot.name/">https://breithbarbot.name</a> s'engage à détruire ses données, sauf si leur conservation s'avère nécessaire à des fins probatoires ou pour répondre à une obligation légale.</p>
+                    <p>Si l'Utilisateur souhaite savoir comment <a href="https://breithbarbot.name/">https://breithbarbot.name</a> utilise ses Données Personnelles, demander à les rectifier ou s'oppose à leur traitement, l'Utilisateur peut contacter <a href="https://breithbarbot.name/">https://breithbarbot.name</a> par écrit à l'adresse suivante : DPO - b.breith@gmail.com</p>
+                    <p>Dans ce cas, l'Utilisateur doit indiquer les Données Personnelles qu'il souhaiterait que <a href="https://breithbarbot.name/">https://breithbarbot.name</a> corrige, mette à jour ou supprime, en s'identifiant précisément avec une copie d'une pièce d'identité (carte d'identité ou passeport). </p>
+                    <p>Les demandes de suppression de Données Personnelles seront soumises aux obligations qui sont imposées à <a href="https://breithbarbot.name/">https://breithbarbot.name</a> par la loi, notamment en matière de conservation ou d'archivage des documents. Enfin, les Utilisateurs de <a href="https://breithbarbot.name/">https://breithbarbot.name</a> peuvent déposer une réclamation auprès des autorités de contrôle, et notamment de la CNIL (https://www.cnil.fr/fr/plaintes).</p>
+
+                    <br>
+
+                    <p class="h5">7.4 Non-communication des données personnelles</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> s'interdit de traiter, héberger ou transférer les Informations collectées sur ses Clients vers un pays situé en dehors de l'Union européenne ou reconnu comme « non adéquat » par la Commission européenne sans en informer préalablement le client. Pour autant, <a href="https://breithbarbot.name/">https://breithbarbot.name</a> reste libre du choix de ses sous-traitants techniques et commerciaux à la condition qu'il présentent les garanties suffisantes au regard des exigences du Règlement Général sur la Protection des Données (RGPD : n° 2016-679).</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> s'engage à prendre toutes les précautions nécessaires afin de préserver la sécurité des Informations et notamment qu'elles ne soient pas communiquées à des personnes non autorisées. Cependant, si un incident impactant l'intégrité ou la confidentialité des Informations du Client est portée à la connaissance de <a href="https://breithbarbot.name/">https://breithbarbot.name</a>, celle-ci devra dans les meilleurs délais informer le Client et lui communiquer les mesures de corrections prises. Par ailleurs <a href="https://breithbarbot.name/">https://breithbarbot.name</a> ne collecte aucune « données sensibles ».</p>
+                    <p>Les Données Personnelles de l'Utilisateur peuvent être traitées par des filiales de <a href="https://breithbarbot.name/">https://breithbarbot.name</a> et des sous-traitants (prestataires de services), exclusivement afin de réaliser les finalités de la présente politique.</p>
+                    <p>Dans la limite de leurs attributions respectives et pour les finalités rappelées ci-dessus, les principales personnes susceptibles d'avoir accès aux données des Utilisateurs de <a href="https://breithbarbot.name/">https://breithbarbot.name</a> sont principalement les agents de notre service client.</p>
+
+                    <br>
+
+                    <p class="h5">7.5 Types de données collectées</p>
+                    <p>Concernant les utilisateurs d'un Site <a href="https://breithbarbot.name/">https://breithbarbot.name</a>, nous collectons les données suivantes qui sont indispensables au fonctionnement du service , et qui seront conservées pendant une période maximale de <b>5 ans</b> après la fin de la relation contractuelle:</p>
+                    <ul style="list-style: square;">
+                        <li>Données de formulaires de contact : Nom et Adresse électronique (email)</li>
+                    </ul>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> collecte en outre des informations qui permettent d'améliorer l'expérience utilisateur et de proposer des conseils contextualisés :<br>Donnée analytics (Google)</p>
+                    <p> Ces données sont conservées pour une période maximale de <b>1 ans</b> après la fin de la relation contractuelle</p>
+
+                    <br><hr><br>
+
+                    <p class="h3">8. Notification d'incident</p>
+                    <p>Quels que soient les efforts fournis, aucune méthode de transmission sur Internet et aucune méthode de stockage électronique n'est complètement sûre. Nous ne pouvons en conséquence pas garantir une sécurité absolue. Si nous prenions connaissance d'une brèche de la sécurité, nous avertirions les utilisateurs concernés afin qu'ils puissent prendre les mesures appropriées. Nos procédures de notification d'incident tiennent compte de nos obligations légales, qu'elles se situent au niveau national ou européen. Nous nous engageons à informer pleinement nos clients de toutes les questions relevant de la sécurité de leur compte et à leur fournir toutes les informations nécessaires pour les aider à respecter leurs propres obligations réglementaires en matière de reporting.</p>
+                    <p>Aucune information personnelle de l'utilisateur du site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> n'est publiée à l'insu de l'utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers. Seule l'hypothèse du rachat de <a href="https://breithbarbot.name/">https://breithbarbot.name</a> et de ses droits permettrait la transmission des dites informations à l'éventuel acquéreur qui serait à son tour tenu de la même obligation de conservation et de modification des données vis à vis de l'utilisateur du site <a href="https://breithbarbot.name/">https://breithbarbot.name</a>.</p>
+
+                    <br>
+
+                    <p class="h5">Sécurité</p>
+
+                    <p>Pour assurer la sécurité et la confidentialité des Données Personnelles et des Données Personnelles de Santé, <a href="https://breithbarbot.name/">https://breithbarbot.name</a> utilise des réseaux protégés par des dispositifs standards tels que par pare-feu, la pseudonymisation, l'encryption et mot de passe. </p>
+                    <p>Lors du traitement des Données Personnelles, <a href="https://breithbarbot.name/">https://breithbarbot.name</a>prend toutes les mesures raisonnables visant à les protéger contre toute perte, utilisation détournée, accès non autorisé, divulgation, altération ou destruction.</p>
+
+                    <br><hr><br>
+
+                    <p class="h3">9. Liens hypertextes « cookies » et balises ("tags") internet</p>
+                    <p>Le site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> contient un certain nombre de liens hypertextes vers d'autres sites, mis en place avec l'autorisation de <a href="https://breithbarbot.name/">https://breithbarbot.name</a>. Cependant, <a href="https://breithbarbot.name/">https://breithbarbot.name</a> n'a pas la possibilité de vérifier le contenu des sites ainsi visités, et n'assumera en conséquence aucune responsabilité de ce fait.</p>
+                    <p>Sauf si vous décidez de désactiver les cookies, vous acceptez que le site puisse les utiliser. Vous pouvez à tout moment désactiver ces cookies et ce gratuitement à partir des possibilités de désactivation qui vous sont offertes et rappelées ci-après, sachant que cela peut réduire ou empêcher l'accessibilité à tout ou partie des Services proposés par le site.</p>
+
+                    <br>
+
+                    <p class="h5">9.1. « COOKIES »</p>
+                    <p>Un « cookie » est un petit fichier d'information envoyé sur le navigateur de l'Utilisateur et enregistré au sein du terminal de l'Utilisateur (ex : ordinateur, smartphone), (ci-après « Cookies »). Ce fichier comprend des informations telles que le nom de domaine de l'Utilisateur, le fournisseur d'accès Internet de l'Utilisateur, le système d'exploitation de l'Utilisateur, ainsi que la date et l'heure d'accès. Les Cookies ne risquent en aucun cas d'endommager le terminal de l'Utilisateur.</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> est susceptible de traiter les informations de l'Utilisateur concernant sa visite du Site, telles que les pages consultées, les recherches effectuées. Ces informations permettent à <a href="https://breithbarbot.name/">https://breithbarbot.name</a> d'améliorer le contenu du Site, de la navigation de l'Utilisateur.</p>
+                    <p>Les Cookies facilitant la navigation et/ou la fourniture des services proposés par le Site, l'Utilisateur peut configurer son navigateur pour qu'il lui permette de décider s'il souhaite ou non les accepter de manière à ce que des Cookies soient enregistrés dans le terminal ou, au contraire, qu'ils soient rejetés, soit systématiquement, soit selon leur émetteur. L'Utilisateur peut également configurer son logiciel de navigation de manière à ce que l'acceptation ou le refus des Cookies lui soient proposés ponctuellement, avant qu'un Cookie soit susceptible d'être enregistré dans son terminal. <a href="https://breithbarbot.name/">https://breithbarbot.name</a> informe l'Utilisateur que, dans ce cas, il se peut que les fonctionnalités de son logiciel de navigation ne soient pas toutes disponibles.</p>
+                    <p>Si l'Utilisateur refuse l'enregistrement de Cookies dans son terminal ou son navigateur, ou si l'Utilisateur supprime ceux qui y sont enregistrés, l'Utilisateur est informé que sa navigation et son expérience sur le Site peuvent être limitées. Cela pourrait également être le cas lorsque <a href="https://breithbarbot.name/">https://breithbarbot.name</a> ou l'un de ses prestataires ne peut pas reconnaître, à des fins de compatibilité technique, le type de navigateur utilisé par le terminal, les paramètres de langue et d'affichage ou le pays depuis lequel le terminal semble connecté à Internet.</p>
+                    <p>Le cas échéant, <a href="https://breithbarbot.name/">https://breithbarbot.name</a> décline toute responsabilité pour les conséquences liées au fonctionnement dégradé du Site et des services éventuellement proposés par <a href="https://breithbarbot.name/">https://breithbarbot.name</a>, résultant (i) du refus de Cookies par l'Utilisateur (ii) de l'impossibilité pour <a href="https://breithbarbot.name/">https://breithbarbot.name</a> d'enregistrer ou de consulter les Cookies nécessaires à leur fonctionnement du fait du choix de l'Utilisateur. Pour la gestion des Cookies et des choix de l'Utilisateur, la configuration de chaque navigateur est différente. Elle est décrite dans le menu d'aide du navigateur, qui permettra de savoir de quelle manière l'Utilisateur peut modifier ses souhaits en matière de Cookies.</p>
+                    <p>À tout moment, l'Utilisateur peut faire le choix d'exprimer et de modifier ses souhaits en matière de Cookies. <a href="https://breithbarbot.name/">https://breithbarbot.name</a> pourra en outre faire appel aux services de prestataires externes pour l'aider à recueillir et traiter les informations décrites dans cette section.</p>
+                    <p>Enfin, en cliquant sur les icônes dédiées aux réseaux sociaux Twitter, Facebook, Linkedin et Google Plus figurant sur le Site de <a href="https://breithbarbot.name/">https://breithbarbot.name</a> ou dans son application mobile et si l'Utilisateur a accepté le dépôt de cookies en poursuivant sa navigation sur le Site Internet ou l'application mobile de <a href="https://breithbarbot.name/">https://breithbarbot.name</a>, Twitter, Facebook, Linkedin et Google Plus peuvent également déposer des cookies sur vos terminaux (ordinateur, tablette, téléphone portable).</p>
+                    <p>Ces types de cookies ne sont déposés sur vos terminaux qu'à condition que vous y consentiez, en continuant votre navigation sur le Site Internet ou l'application mobile de <a href="https://breithbarbot.name/">https://breithbarbot.name</a>. À tout moment, l'Utilisateur peut néanmoins revenir sur son consentement à ce que <a href="https://breithbarbot.name/">https://breithbarbot.name</a> dépose ce type de cookies.</p>
+
+                    <br>
+
+                    <p class="h5">9.2. BALISES ("TAGS") INTERNET</p>
+                    <p><a href="https://breithbarbot.name/">https://breithbarbot.name</a> peut employer occasionnellement des balises Internet (également appelées « tags », ou balises d'action, GIF à un pixel, GIF transparents, GIF invisibles et GIF un à un) et les déployer par l'intermédiaire d'un partenaire spécialiste d'analyses Web susceptible de se trouver (et donc de stocker les informations correspondantes, y compris l'adresse IP de l'Utilisateur) dans un pays étranger.</p>
+                    <p>Ces balises sont placées à la fois dans les publicités en ligne permettant aux internautes d'accéder au Site, et sur les différentes pages de celui-ci. </p>
+                    <p>Cette technologie permet à <a href="https://breithbarbot.name/">https://breithbarbot.name</a> d'évaluer les réponses des visiteurs face au Site et l'efficacité de ses actions (par exemple, le nombre de fois où une page est ouverte et les informations consultées), ainsi que l'utilisation de ce Site par l'Utilisateur. </p>
+                    <p>Le prestataire externe pourra éventuellement recueillir des informations sur les visiteurs du Site et d'autres sites Internet grâce à ces balises, constituer des rapports sur l'activité du Site à l'attention de <a href="https://breithbarbot.name/">https://breithbarbot.name</a>, et fournir d'autres services relatifs à l'utilisation de celui-ci et d'Internet.</p>
+
+                    <br>
+
+                    <p class="h5">Cookies utilisés</p>
+                    <ul style="list-style: square;">
+                        <li><a href="https://support.google.com/analytics/answer/6004245">Google Analytics</a> : Statistiques de consultation</li>
+                    </ul>
+
+                    <br><hr><br>
+
+                    <p class="h3">10. Droit applicable et attribution de juridiction.</p>
+                    <p>Tout litige en relation avec l'utilisation du site <a href="https://breithbarbot.name/">https://breithbarbot.name</a> est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Toulouse</p>
+
+                    <br><hr><br>
+
+                    <p class="text-center h2">Outils / plugins utilisés</p>
+
+                    <br>
+
+                    <ul style="list-style: square;">
+                        <li><a target="_blank" href="https://getbootstrap.com/">Twitter Bootstrap <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="https://symfony.com/">Symfony <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="https://github.com/mattboldt/typed.js">Typed.js <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="https://www.pexels.com/photo/green-island-near-the-ocean-during-daytime-169905">Green Island Near the Ocean during Daytime <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="https://github.com/VincentGarreau/particles.js">particles.js <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+                        <li>
+                            <a target="_blank" href="https://developers.google.com/recaptcha/">reCAPTCHA <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+                            <ul>
+                                <li><a target="_blank" href="https://policies.google.com/privacy">Confidentialité <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+                                <li><a target="_blank" href="https://policies.google.com/terms">Conditions <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+                            <script src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/main.js"></script>
+        
+    <script src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/prism.js"></script>
+    <script src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/blog.js"></script>
+    <script>
+        particlesJS.load('header', '/build/website/plugins/particles.js/blog.json');
+    </script>
+
+    <script src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/blog_post.js"></script>
+    <script>
+        let fbShare = document.getElementById("fbShare");
+        let twShare = document.getElementById("twShare");
+        let lkShare = document.getElementById("lkShare");
+        let vdShare = document.getElementById("vdShare");
+        let tbShare = document.getElementById("tbShare");
+
+        let windows_open = "height=370,width=500,left=200,top=200,menubar=0,scrollbars=yes,resizable=yes,toolbar=no";
+
+        fbShare.onclick = function () {
+            window.open("https://www.facebook.com/sharer.php?u=https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu", "", windows_open);
+            return false;
+        };
+
+        twShare.onclick = function () {
+            window.open("https://twitter.com/share?url=https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu&text=Installation et configuration d'un serveur VPS sous debian ou ubuntu&via=breithbarbot", "", windows_open);
+            return false;
+        };
+
+        lkShare.onclick = function () {
+            window.open("https://www.linkedin.com/shareArticle?mini=true&url=https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu", "", windows_open);
+            return false;
+        };
+
+        vdShare.onclick = function () {
+            window.open("https://partners.viadeo.com/share?url=https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu&comment=Installation et configuration d'un serveur VPS sous debian ou ubuntu", "", windows_open);
+            return false;
+        };
+
+        tbShare.onclick = function () {
+            window.open("https://www.tumblr.com/share/link?url=https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu&name=Installation et configuration d'un serveur VPS sous debian ou ubuntu", "", windows_open);
+            return false;
+        };
+
+                    // Disqus
+            let disqus_config = function () {
+                this.page.url = 'https://breithbarbot.name/blog/installation-et-configuration-d-un-serveur-vps-sous-debian-ou-ubuntu';
+            };
+
+            (function () {
+                let d = document, s = d.createElement('script');
+                s.src = '//breithbarbot.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+            </script>
+
+
+        <!-- Page rendered on 25 novembre 2019 à 15:46:42 utc+1 -->
+    
+
+                    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KD6ZXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            
+<style type="text/css" data-typed-js-css="true">
+        .typed-cursor{
+          opacity: 1;
+        }
+        .typed-cursor.typed-cursor--blink{
+          animation: typedjsBlink 0.7s infinite;
+          -webkit-animation: typedjsBlink 0.7s infinite;
+                  animation: typedjsBlink 0.7s infinite;
+        }
+        @keyframes typedjsBlink{
+          50% { opacity: 0.0; }
+        }
+        @-webkit-keyframes typedjsBlink{
+          0% { opacity: 1; }
+          50% { opacity: 0.0; }
+          100% { opacity: 1; }
+        }
+      </style><iframe style="display: none;" src="./Installation et configuration d&#39;un serveur VPS sous debian ou ubuntu - Breith Barbot_files/saved_resource(1).html"></iframe></body></html>

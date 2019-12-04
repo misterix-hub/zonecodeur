@@ -22,4 +22,5 @@ urlpatterns = [
     url('tutos/1/video', views.detailsVideos, name="detailsVideos"),
     url('users/2/profile', views.profilMembre, name="profilMembre"),
     url('avatar', views.avatar, name="avatar"),
+    url('setAvatar', views.setAvatar, name="setAvatar"),
 ]

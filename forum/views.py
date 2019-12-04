@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
+from forum.functions.functions import handle_uploaded_file
 
 def index(request):
     return render(request, 'forum/index.phtml')
@@ -51,3 +54,8 @@ def profilMembre(request):
 
 def avatar(request):
     return render(request, 'forum/users/avatar.phtml')
+
+def setAvatar(request):
+    if request.method == 'POST' and request.FILES['image']:  
+        handle_uploaded_file(request.FILES['image'])
+        return render(request, 'forum/inscriptionSuccess.phtml')

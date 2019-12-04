@@ -15,7 +15,8 @@
                         <span uk-icon="icon: user; ratio: 4"></span><br />
                     </h2><br />
                     <div class="js-upload" uk-form-custom>
-                        <input type="file" accept="image/*" id="insert_image">
+                        <input type="file" accept="image/*" name="insert_image" id="insert_image">
+                        {% csrf_token %}
                         <button class="uk-button uk-button-primary" type="button" tabindex="-1">
                             <small>sélectionnez votre photo</small>
                         </button>
@@ -81,6 +82,30 @@
                 }
                 reader.readAsDataURL(this.files[0]);
                 UIkit.modal($('#modal-sections')).show();
+            });
+
+            $('#crop_image').click(function() {
+                $image_crop.croppie('result', {
+                    type : 'canvas',
+                    size: 'viewport'
+                }).then(function(response) {
+                    var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+
+                    var formData = new FormData();
+                    formData.append('file', $('input[type=file]')[0].files[0]);   
+
+                    $.ajax({
+                       beforeSend: function(xhr){xhr.setRequestHeader('X-CSRFToken', csrftoken);},
+                       contentType: false,
+                       url: "{% url 'setAvatar' %}",
+                       type: 'POST',
+                       data: {"image" : response},
+                       success: function(data) {
+                           UIkit.modal($('#modal-sections')).hide();
+                           console.log(data);
+                       }
+                   })
+                });
             });
         });
     </script>
